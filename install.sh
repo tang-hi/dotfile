@@ -16,6 +16,7 @@ if [ ! -d "$ROOT/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
 fi
 
 chsh -s $(which zsh)
+source ~/.zshrc
 
 ## vim set
 VIM_PLUGIN=~/.vim/pack/plugins/{opt,start}
@@ -64,8 +65,9 @@ fi
 
 cp ./.vimrc ~/.vimrc
 cd $PLUGIN_DIR/YouCompleteMe
+
 git submodule update --init --recursive
 python3 install.py --clangd-completer
-source ~/.zshrc
+
 echo -e "\033[0;32m successful! \033[0m"
 
