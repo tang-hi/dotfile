@@ -11,5 +11,7 @@ bash install.sh
 ```
 
 ## Install with github
-
-update later :(
+```sh
+git clone https://github.com/tang-hi/dotfile.git
+bash install_github.sh
+```
