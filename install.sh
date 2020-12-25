@@ -1,6 +1,7 @@
 #!/bin/sh
 ## china
 ## zsh set
+sudo apt-get install zsh
 ROOT=/home/$USER
 if [ ! -d "$ROOT/.oh-my-zsh" ]; then
     git clone https://gitee.com/geogra/ohmyzsh.git ~/.oh-my-zsh
