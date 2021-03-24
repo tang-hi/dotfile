@@ -16,8 +16,11 @@ if [ ! -d "$ROOT/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
+
+
 chsh -s $(which zsh)
 source ~/.zshrc
+
 
 ## vim set
 VIM_PLUGIN=~/.vim/pack/plugins/{opt,start}
@@ -69,6 +72,12 @@ cd $PLUGIN_DIR/YouCompleteMe
 
 git submodule update --init --recursive
 python3 install.py --clangd-completer
+
+#set fzf
+if [ ! -d "$ROOT/.fzf" ]; then
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf	
+	~/.fzf/install
+fi
 
 echo -e "\033[0;32m successful! \033[0m"
 

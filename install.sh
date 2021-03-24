@@ -16,6 +16,11 @@ if [ ! -d "$ROOT/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
     git clone https://gitee.com/lip0041/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
+
+if [ ! -d "$ROOT/.fzf" ]; then
+    git clone https://gitee.com/lip0041/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+fi
+
 chsh -s $(which zsh)
 source ~/.zshrc
 
