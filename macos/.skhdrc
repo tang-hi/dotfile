@@ -1,0 +1,45 @@
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# Navigation
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+# close window
+alt - q : yabai -m window --close
+# minimize window
+alt - m : yabai -m window --minimize
+
+# resize windows
+lshift + alt - h : yabai -m window --resize left:-50:0; \
+                  yabai -m window --resize right:-50:0
+lshift + alt - j : yabai -m window --resize bottom:0:50; \
+                  yabai -m window --resize top:0:50
+lshift + alt - k : yabai -m window --resize top:0:-50; \
+                  yabai -m window --resize bottom:0:-50
+lshift + alt - l : yabai -m window --resize right:50:0; \
+                  yabai -m window --resize left:50:0
+
+# swap windoes
+ctrl + alt - h : yabai -m window --swap west
+ctrl + alt - j : yabai -m window --swap south
+ctrl + alt - k : yabai -m window --swap north
+ctrl + alt - l : yabai -m window --swap east
+
+# move window
+shift + cmd - h : yabai -m window --warp west
+shift + cmd - j : yabai -m window --warp south
+shift + cmd - k : yabai -m window --warp north
+shift + cmd - l : yabai -m window --warp east
+
+# Equalize size of windows
+lshift + alt - e : yabai -m space --balance
+
+# Float / Unfloat window
+shift + alt - space : \
+    yabai -m window --toggle float; \
+    yabai -m window --toggle border
+
+
+shift + lalt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
+lalt - f : yabai -m window --toggle native-fullscreen; sketchybar --trigger window_focus
+shift + lalt - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
