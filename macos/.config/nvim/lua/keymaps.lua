@@ -93,3 +93,12 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+--Hop
+keymap("n", "f", ":HopChar1CurrentLineAC<CR>", opts)
+keymap("n", "F", ":HopChar1CurrentLineBC<CR>", opts)
+keymap("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
+keymap("n", "<leader><leader>b", ":HopWordBC<CR>", opts)
+keymap("n", "<leader><leader>j", ":HopVerticalAC<CR>", opts)
+keymap("n", "<leader><leader>k", ":HopVerticalBC<CR>", opts)
+
