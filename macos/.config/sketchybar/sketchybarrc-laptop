@@ -5,6 +5,7 @@ FONT_FACE="JetBrainsMono Nerd Font"
 
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins-laptop"
 PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
+source $HOME/.config/sketchybar/colors.sh
 #
 # Setting up and starting the helper process
 HELPER=git.felix.helper
@@ -87,12 +88,12 @@ sketchybar --add item front_app left \
     icon.drawing=off \
     label.font="$FONT_FACE:Bold:12.0" \
     label.drawing=yes
-
+#0xff181926
 sketchybar --add item weather.moon q \
     --set weather.moon \
     background.color=0x667dc4e4 \
     background.padding_right=-1 \
-    icon.color=0xff181926 \
+    icon.color=$YELLOW \
     icon.font="$FONT_FACE:Bold:22.0" \
     icon.padding_left=4 \
     icon.padding_right=3 \
