@@ -9,8 +9,8 @@ COUNTRY="$(echo $LOCATION_JSON | jq '.country' | tr -d '"')"
 # Line below replaces spaces with +
 LOCATION_ESCAPED="${LOCATION// /+}+${REGION// /+}"
 # hard code
-LOCATION="SHANGHAI"
-LOCATION_ESCAPED="SHANGHAI"
+LOCATION="HANGZHOU"
+LOCATION_ESCAPED="HANGZHOU"
 WEATHER_JSON=$(curl -s "https://wttr.in/$LOCATION_ESCAPED?format=j1")
 
 # Fallback if empty
