@@ -11,7 +11,7 @@ local M = {
     priority = 1000,
 }
 
-M.name = "catppuccin-frappe"
+M.name = "catppuccin-latte"
 function M.config()
   local status_ok, _ = pcall(vim.cmd.colorscheme, M.name)
   if not status_ok then
