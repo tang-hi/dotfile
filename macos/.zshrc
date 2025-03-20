@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-
+export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -19,3 +19,7 @@ ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 plugins=(git z zsh-syntax-highlighting zsh-autosuggestions vi-mode extract sudo tmux colored-man-pages)
 export EDITOR="$(which nvim)"
 source $ZSH/oh-my-zsh.sh
+
+eval $(thefuck --alias)
+
+alias python=python3

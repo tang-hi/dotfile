@@ -1,11 +1,17 @@
 include ./theme.conf
+# font 
 font_family      FiraCode Nerd Font
 bold_font        FiraCode Nerd Font Mono Bold
 italic_font      FiraCode Nerd Font Mono Italic
 bold_italic_font FiraCode Nerd Font Mono Bold Italic
 font_size 16.0
-hide_window_decorations yes
-window_margin_width 4
+symbol_map U+F0001-U+F1af0 DroidSansM Nerd Font
+symbol_map U+F8FF,U+100000-U+1018C7 DroidSansM Nerd Font
+
+scrollback_lines 20000
+
+enable_audio_bell no
+
 cursor_blink_interval 0
 macos_quit_when_last_window_closed no
 macos_colorspace default
@@ -15,6 +21,12 @@ resize_draw_strategy blank
 remember_window_size no
 resize_debounce_time 0.001
 
+# kitty style
+hide_window_decorations yes
+background_opacity 0.9
+background_blur 16
+
+
 tab_bar_edge bottom
 tab_bar_style powerline
 tab_powerline_style slanted
@@ -22,8 +34,6 @@ tab_activity_symbol 
 tab_title_max_length 25
 tab_title_template "{fmt.fg.red}{bell_symbol}{fmt.fg.tab} {index}: {tab.active_oldest_exe} {activity_symbol}"
 
-symbol_map U+F0001-U+F1af0 DroidSansM Nerd Font
-symbol_map U+F8FF,U+100000-U+1018C7 DroidSansM Nerd Font
 
 #  ____ _____ _   _ _____  
 # |  _ \_   _| \ | |  __ \ 
@@ -42,10 +52,17 @@ map cmd+7 goto_tab 7
 map cmd+8 goto_tab 8
 map cmd+9 goto_tab 9
 map cmd+0 goto_tab 10
-map cmd+u page_up
-map cmd+d page_down
 
 map cmd+t launch --type=tab --cwd=current
 map cmd+n launch --type=os-window --cwd=current
 
+map cmd+u scroll_page_up
+map cmd+d scroll_page_down
 
+
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Frappe
+include current-theme.conf
+# END_KITTY_THEME

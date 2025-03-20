@@ -1,0 +1,1 @@
+/Users/tangdonghai/projects/dotfile/macos/.tmux
