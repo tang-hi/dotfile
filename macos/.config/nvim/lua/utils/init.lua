@@ -5,7 +5,6 @@ M.servers = {
   "clangd",
   "cssls",
   "html",
-  "tsserver",
   "pyright",
   "bashls",
   "jsonls",
