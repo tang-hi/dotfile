@@ -1,101 +1,153 @@
-# macos
+# Dotfiles
 
-![Image](img/macos.png)
+Personal dotfiles for macOS and Arch Linux (Hyprland).
 
-## Key Bindings
+## Arch Linux (Hyprland)
 
-### Windows Management
+![Hyprland Desktop](img/arch.png)
 
-- `⌘ + ⏎` - Open Kitty Terminal
+### Features
 
-------------
+- **Window Manager**: Hyprland with smooth animations
+- **Bar**: Waybar with Catppuccin theme
+- **Terminal**: Kitty / Alacritty
+- **Launcher**: Rofi
+- **Notifications**: Dunst
+- **Editor**: Neovim with Lazy.nvim
+- **Shell**: Zsh with Oh-My-Zsh
 
-- `⌥ + h` - Focus on left window
+### Installation
 
-- `⌥ + j` - Focus on bottom window
+```bash
+cd arch
+chmod +x install.sh
+./install.sh
+```
 
-- `⌥ + k` - Focus on top window
+### Key Bindings
 
-- `⌥ + l` - Focus on right window
+#### Window Management
 
-------------
+| Key | Action |
+|-----|--------|
+| `Super + Return` | Open Kitty Terminal |
+| `Super + Q` | Close window |
+| `Super + F` | Toggle floating |
+| `Super + Space` | Open Rofi launcher |
+| `Alt + Return` | Toggle fullscreen |
+| `Super + L` | Lock screen |
 
-- `⌥ + q` - close current window
+#### Workspaces
 
-- `⌥ + m` - minimize current window
+| Key | Action |
+|-----|--------|
+| `Super + 1-5` | Switch to workspace 1-5 |
+| `Super + Shift + 1-5` | Move window to workspace 1-5 |
 
-------------
+#### Media & Brightness
 
-- `⇧ + ⌥ + h` - resize window left
+| Key | Action |
+|-----|--------|
+| `F2/F3` | Brightness down/up |
+| `F5` | Toggle mute |
+| `F6/F7` | Volume down/up |
+| `F8/F9/F10` | Previous/Play-Pause/Next |
 
-- `⇧ + ⌥ + j` - resize window down
+#### Screenshots
 
-- `⇧ + ⌥ + k` - resize window up
+| Key | Action |
+|-----|--------|
+| `Super + P` | Screenshot selection |
+| `Print` | Screenshot full screen |
 
-- `⇧ + ⌥ + l` - resize window right
+### Post-Installation
 
-------------
+1. **Configure monitors**: Edit `~/.config/hypr/hyprland.conf`
+2. **Set wallpaper**: Add images to `~/.config/swww/`
+3. **Git config**: Edit `~/.gitconfig` with your name/email
+4. **Secrets**: Add API keys etc to `~/.zshrc.local`
+5. **Tmux plugins**: Press `Ctrl+B` then `I` in tmux
 
-- `⌃ + ⌥ + h` - swap window left
+### Dependencies
 
-- `⌃ + ⌥ + j` - swap window bottom
+```bash
+# Core
+yay -S hyprland waybar rofi dunst kitty alacritty swww
 
-- `⌃ + ⌥ + k` - swap window top
+# Utilities
+yay -S hypridle hyprlock brightnessctl pamixer playerctl grim slurp swappy
 
-- `⌃ + ⌥ + l` - swap window right
+# Development
+yay -S neovim tmux fzf thefuck atuin pyenv jenv
 
-------------
+# Fonts
+yay -S ttf-maple ttf-jetbrains-mono-nerd ttf-sf-pro
+```
 
-- `⇧ + ⌘ + h` - move window left
+---
 
-- `⇧ + ⌘ + j` - move window bottom
+## macOS
 
-- `⇧ + ⌘ + k` - move window top
+![macOS Desktop](img/macos.png)
 
-- `⇧ + ⌘ + l` - move window right
+### Key Bindings
 
-------------
+#### Window Management (yabai + skhd)
 
-- `⇧ + ⌥ + e` - eqalize all windows
+| Key | Action |
+|-----|--------|
+| `Cmd + Return` | Open Kitty Terminal |
+| `Alt + h/j/k/l` | Focus window left/down/up/right |
+| `Alt + q` | Close current window |
+| `Shift + Alt + h/j/k/l` | Resize window |
+| `Ctrl + Alt + h/j/k/l` | Swap window |
+| `Shift + Cmd + h/j/k/l` | Move window |
+| `Alt + f` | Toggle native fullscreen |
+| `Shift + Alt + f` | Toggle zoom fullscreen |
+| `Shift + Alt + Space` | Float/unfloat window |
 
-- `⇧ + ⌥ + space` - float / unfloat window
+#### Kitty
 
-- `⌥ + f` - toggle native fullscreen
+| Key | Action |
+|-----|--------|
+| `Cmd + u/d` | Scroll terminal up/down |
+| `Cmd + t` | New tab |
+| `Cmd + 1-9` | Go to tab |
 
-- `⇧ + ⌥ + f` - toggle zoom fullscreen
+#### Tmux
 
-------------
+| Key | Action |
+|-----|--------|
+| `Ctrl+B + \|` | Split pane vertically |
+| `Ctrl+B + -` | Split pane horizontally |
+| `Ctrl+B + c` | New tab |
+| `Cmd + Arrow` | Navigate panes |
 
-### Kitty
+---
 
-- `⌘ + u` - scroll terminal up
+## Structure
 
-- `⌘ + d` - scroll terminal down
-
-- `⌘ + t` - open new tab
-
-- `⌘ + 1` - go to tab 1
-
-- `⌘ + 2` - go to tab 2
-
-- `⌘ + up` - scroll terminal line up
-
-- `⌘ + down` - scroll terminal line down
-
-### Tmux
-
-- `⌃ B + |` - open new pane vertically
-
-- `⌃ B + -` - open new pane horizontally
-
-- `⌘ + up` - go to pane up
-
-- `⌘ + down` - go to pane down
-
-- `⌘ + left` - go to pane left
-
-- `⌘ + right` - go to pane right
-
-- `⌃ B + c` - open new tab
-
-- `⌃ B + "` - rename tab
+```
+dotfile/
+├── arch/
+│   ├── .zshrc
+│   ├── .bashrc
+│   ├── .gitconfig
+│   ├── .tmux.conf
+│   ├── install.sh
+│   └── .config/
+│       ├── nvim/
+│       ├── hypr/
+│       ├── kitty/
+│       ├── alacritty/
+│       ├── waybar/
+│       ├── rofi/
+│       └── dunst/
+└── macos/
+    ├── .zshrc
+    ├── .skhdrc
+    ├── .tmux.conf
+    └── .config/
+        ├── nvim/
+        └── kitty/
+```

@@ -1,0 +1,188 @@
+@import "macchiato.css";
+
+* {
+  font-family: "Maple Mono NF CN", "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @text;
+}
+
+tooltip {
+  background: @surface0;
+  border: 2px solid @lavender;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @text;
+  padding: 5px;
+}
+
+button {
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: inherit;
+  box-shadow: none;
+}
+
+/* ===== 工作区样式 ===== */
+#workspaces {
+  background: @surface0;
+  border-radius: 12px;
+  padding: 2px 6px;
+  margin: 4px 4px;
+}
+
+#workspaces button {
+  padding: 4px 8px;
+  margin: 2px;
+  background-color: transparent;
+  color: @overlay1;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#workspaces button label {
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces button:hover {
+  background: @surface1;
+  color: @sky;
+}
+
+#workspaces button.active {
+  background: @lavender;
+  color: @base;
+  border-radius: 8px;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  color: @base;
+}
+
+/* ===== 中间窗口标题 ===== */
+#window {
+  background: @surface0;
+  color: @text;
+  border-radius: 12px;
+  padding: 4px 16px;
+  margin: 4px;
+  font-weight: bold;
+}
+
+/* ===== 右侧模块胶囊样式 ===== */
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#clock,
+#custom-powermenu {
+  background: @surface0;
+  border-radius: 12px;
+  padding: 4px 12px;
+  margin: 4px 3px;
+  transition: all 0.3s ease;
+}
+
+/* 悬停效果 */
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#network:hover,
+#pulseaudio:hover,
+#clock:hover {
+  background: @surface1;
+}
+
+/* ===== 各模块颜色 ===== */
+#pulseaudio {
+  color: @maroon;
+}
+
+#network {
+  color: @yellow;
+}
+
+#temperature {
+  color: @sky;
+}
+
+#battery {
+  color: @green;
+}
+
+#clock {
+  color: @flamingo;
+}
+
+#custom-powermenu {
+  color: @red;
+  padding: 4px 14px;
+  margin-right: 4px;
+}
+
+#custom-powermenu:hover {
+  background: @red;
+  color: @base;
+}
+
+/* ===== 容器样式 ===== */
+.modules-right,
+.modules-left,
+.modules-center {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* ===== 电池状态 ===== */
+#battery.charging,
+#battery.plugged {
+  color: @sapphire;
+}
+
+#battery.warning {
+  color: @peach;
+}
+
+#battery.critical:not(.charging) {
+  background: @red;
+  color: @base;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    background: @maroon;
+  }
+}
+
+/* ===== 静音状态 ===== */
+#pulseaudio.muted {
+  color: @overlay0;
+}
+
+/* ===== 温度警告 ===== */
+#temperature.critical {
+  background: @red;
+  color: @base;
+}
+
+/* ===== 网络断开 ===== */
+#network.disconnected {
+  color: @overlay0;
+}

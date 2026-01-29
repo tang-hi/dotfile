@@ -1,0 +1,14 @@
+# Local secrets (API keys, tokens, etc.)
+.zshrc.local
+.bashrc.local
+
+# User-specific configs
+.config/swww/*.jpg
+.config/swww/*.png
+
+# Nvim generated files
+.config/nvim/lazy-lock.json
+.config/nvim/plugin/
+
+# Cache
+.cache/
