@@ -125,6 +125,20 @@ button:hover {
   color: @green;
 }
 
+#cpu {
+  color: @teal;
+  min-width: 60px;
+}
+
+#memory {
+  color: @mauve;
+  min-width: 60px;
+}
+
+#network {
+  min-width: 180px;
+}
+
 #clock {
   color: @flamingo;
 }
@@ -184,5 +198,50 @@ button:hover {
 
 /* ===== 网络断开 ===== */
 #network.disconnected {
+  color: @overlay0;
+}
+
+/* ===== Spotify/MPRIS 播放器样式 ===== */
+#mpris {
+  background: @surface0;
+  border-radius: 12px;
+  padding: 4px 12px;
+  margin: 4px 3px;
+  color: @green;
+  transition: all 0.3s ease;
+}
+
+#mpris:hover {
+  background: @surface1;
+}
+
+#mpris.playing {
+  color: @green;
+}
+
+#mpris.paused {
+  color: @yellow;
+  font-style: italic;
+}
+
+#mpris.stopped {
+  color: @overlay0;
+}
+
+/* ===== 天气模块样式 ===== */
+#custom-weather {
+  background: @surface0;
+  border-radius: 12px;
+  padding: 4px 12px;
+  margin: 4px 3px;
+  color: @sapphire;
+  transition: all 0.3s ease;
+}
+
+#custom-weather:hover {
+  background: @surface1;
+}
+
+#custom-weather.error {
   color: @overlay0;
 }
