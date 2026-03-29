@@ -1,0 +1,129 @@
+// Catppuccin Latte
+$text: #4c4f69;
+$subtext1: #5c5f77;
+$subtext0: #6c6f85;
+$overlay0: #9ca0b0;
+$surface0: #ccd0da;
+$crust: #dce0e8;
+$base: #eff1f5;
+$teal: #179299;
+$mauve: #8839ef;
+$sapphire: #209fb5;
+
+* {
+  all: unset;
+  font-family: "Maple Mono NF CN", monospace;
+}
+
+.dashboard {
+  padding: 0;
+}
+
+// ━━━ Glass card ━━━
+.card {
+  background-color: rgba(239, 241, 245, 0.55);
+  border: 1px solid rgba(220, 224, 232, 0.4);
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+
+// ━━━ Clock ━━━
+.clock-card {
+  padding: 20px 24px;
+}
+
+.clock-time {
+  font-size: 42px;
+  font-weight: 700;
+  color: $text;
+}
+
+.clock-date {
+  font-size: 13px;
+  color: $subtext0;
+  margin-top: 2px;
+}
+
+// ━━━ Calendar ━━━
+.cal-card {
+  padding: 12px 16px;
+}
+
+.cal {
+  color: $text;
+  font-size: 11px;
+}
+
+.cal:selected {
+  color: white;
+  background-color: $teal;
+  border-radius: 8px;
+}
+
+.cal:indeterminate {
+  color: rgba(76, 79, 105, 0.3);
+}
+
+.cal.header {
+  color: $teal;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cal.button {
+  color: $overlay0;
+  &:hover {
+    color: $teal;
+  }
+}
+
+// ━━━ System monitor ━━━
+.sys-card {
+  padding: 16px;
+}
+
+.circle {
+  min-width: 52px;
+  min-height: 52px;
+  background-color: rgba(204, 208, 218, 0.4);
+}
+
+.circle-cpu  { color: $teal; }
+.circle-ram  { color: $mauve; }
+.circle-disk { color: $sapphire; }
+
+.sys-icon {
+  font-size: 18px;
+  color: $text;
+}
+
+.sys-val {
+  font-size: 12px;
+  font-weight: 600;
+  color: $text;
+}
+
+.sys-name {
+  font-size: 10px;
+  color: $overlay0;
+}
+
+// ━━━ Weather ━━━
+.weather-card {
+  padding: 16px 20px;
+}
+
+.weather-icon {
+  font-size: 36px;
+}
+
+.weather-temp {
+  font-size: 20px;
+  font-weight: 600;
+  color: $text;
+}
+
+.weather-desc {
+  font-size: 12px;
+  color: $subtext0;
+}

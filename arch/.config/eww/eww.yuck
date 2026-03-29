@@ -1,0 +1,75 @@
+;; ━━━ Variables ━━━
+
+(defpoll time :interval "1s" `date +%H:%M`)
+(defpoll date-full :interval "60s" `date "+%A, %B %-d"`)
+
+(defpoll weather-icon :interval "1800s"
+  `curl -sf "wttr.in/?format=%c" 2>/dev/null | tr -d ' ' || echo "?"`)
+(defpoll weather-temp :interval "1800s"
+  `curl -sf "wttr.in/?format=%t" 2>/dev/null | sed 's/+//' || echo "N/A"`)
+(defpoll weather-desc :interval "1800s"
+  `curl -sf "wttr.in/?format=%C" 2>/dev/null || echo ""`)
+
+;; ━━━ Widgets ━━━
+
+(defwidget clock []
+  (box :class "card clock-card" :orientation "v" :space-evenly false :spacing 2
+    (label :class "clock-time" :text time :halign "start")
+    (label :class "clock-date" :text date-full :halign "start")))
+
+(defwidget cal []
+  (box :class "card cal-card"
+    (calendar :class "cal")))
+
+(defwidget system []
+  (box :class "card sys-card" :orientation "h" :space-evenly true :spacing 8
+    (box :orientation "v" :space-evenly false :spacing 4 :halign "center"
+      (circular-progress :class "circle circle-cpu"
+        :value {EWW_CPU.avg} :thickness 4 :start-at 75
+        (label :class "sys-icon" :text ""))
+      (label :class "sys-val" :text "${round(EWW_CPU.avg, 0)}%")
+      (label :class "sys-name" :text "CPU"))
+    (box :orientation "v" :space-evenly false :spacing 4 :halign "center"
+      (circular-progress :class "circle circle-ram"
+        :value {EWW_RAM.used_mem_perc} :thickness 4 :start-at 75
+        (label :class "sys-icon" :text "󰰑"))
+      (label :class "sys-val" :text "${round(EWW_RAM.used_mem_perc, 0)}%")
+      (label :class "sys-name" :text "RAM"))
+    (box :orientation "v" :space-evenly false :spacing 4 :halign "center"
+      (circular-progress :class "circle circle-disk"
+        :value {EWW_DISK["/"].used_perc} :thickness 4 :start-at 75
+        (label :class "sys-icon" :text "󰋊"))
+      (label :class "sys-val" :text "${round(EWW_DISK["/"].used_perc, 0)}%")
+      (label :class "sys-name" :text "Disk"))))
+
+(defwidget weather []
+  (box :class "card weather-card" :orientation "h" :space-evenly false :spacing 16
+    (label :class "weather-icon" :text weather-icon :valign "center")
+    (box :orientation "v" :space-evenly false :spacing 2 :valign "center"
+      (label :class "weather-temp" :text weather-temp :halign "start")
+      (label :class "weather-desc" :text weather-desc :halign "start"))))
+
+;; ━━━ Dashboard ━━━
+
+(defwidget dashboard []
+  (box :class "dashboard" :orientation "v" :space-evenly false :spacing 12
+    (clock)
+    (cal)
+    (system)
+    (weather)))
+
+(defwindow dashboard0
+  :monitor 0
+  :geometry (geometry :x "20px" :y "20px" :width "280px" :anchor "top right")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  (dashboard))
+
+(defwindow dashboard1
+  :monitor 1
+  :geometry (geometry :x "20px" :y "20px" :width "280px" :anchor "top right")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  (dashboard))

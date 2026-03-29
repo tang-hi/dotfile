@@ -1,6 +1,7 @@
 # Local secrets (API keys, tokens, etc.)
 .zshrc.local
 .bashrc.local
+.gitconfig.local
 
 # User-specific configs
 .config/swww/*.jpg
@@ -9,6 +10,9 @@
 # Nvim generated files
 .config/nvim/lazy-lock.json
 .config/nvim/plugin/
+
+# Atuin data
+.config/atuin/atuin-receipt.json
 
 # Cache
 .cache/

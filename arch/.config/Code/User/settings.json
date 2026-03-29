@@ -1,0 +1,221 @@
+{
+    "editor.fontLigatures": "true",
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.fontSize": 16,
+    "go.lintTool": "golangci-lint",
+    "go.useLanguageServer": true,
+    "go.testTimeout": "60s",
+    "workbench.sideBar.location": "left",
+    "extensions.ignoreRecommendations": true,
+    "editor.lineNumbers": "relative",
+    "files.autoSave": "onFocusChange",
+    "cmake.configureOnOpen": true,
+    "redhat.telemetry.enabled": true,
+    "zenMode.hideLineNumbers": false,
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.startupEditor": "none",
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "go.formatTool": "gofmt",
+    "editor.fontFamily": "'Maple Mono NF CN'",
+    "terminal.integrated.fontFamily": "'Maple Mono NF CN'",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.maxConcurrentThreads": 4,
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "editor.formatOnSaveMode": "modifications",
+    "chat.experimental.quickQuestion.enable": true,
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++20",
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", ":"],
+            "commands": ["workbench.action.showCommands"],
+            "silent": true
+        },
+        {
+            "before": ["<leader>", "e"],
+            "commands": ["workbench.view.explorer"]
+        },
+        {
+            "before": ["<C-k>"],
+            "commands": ["workbench.action.navigateUp"]
+        },
+        {
+            "before": ["<C-h>"],
+            "commands": ["workbench.action.navigateLeft"]
+        },
+        {
+            "before": ["<C-j>"],
+            "commands": ["workbench.action.navigateDown"]
+        },
+        {
+            "before": ["<C-l>"],
+            "commands": ["workbench.action.navigateRight"]
+        },
+        {
+            "before": ["g", "d"],
+            "commands": ["editor.action.goToDeclaration"]
+        },
+        {
+            "before": ["g", "D"],
+            "commands": ["editor.action.goToImplementation"]
+        },
+        {
+            "before": ["<leader>", "r"],
+            "commands": ["editor.action.goToReferences"]
+        },
+        {
+            "before": ["<leader>", "i"],
+            "commands": ["eritor.action.peekImplementation"]
+        },
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["editor.showCallHierarchy"]
+        },
+        {
+            "before": ["<leader>", "t"],
+            "commands": ["editor.showTypeHierarchy"]
+        }
+    ],
+    "workbench.colorTheme": "Catppuccin Latte",
+    "hexeditor.columnWidth": 4,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "git.autofetch": true,
+    "workbench.editor.empty.hint": "hidden",
+    "window.titleBarStyle": "custom",
+    "workbench.activityBar.location": "top",
+    "cmake.options.statusBarVisibility": "visible",
+    "cmake.showOptionsMovedNotification": false,
+    "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.connectTimeout": 60,
+    "git.ignoreLegacyWarning": true,
+    "gitlens.advanced.messages": {
+        "suppressGitVersionWarning": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[starlark]": {
+        "editor.defaultFormatter": "BazelBuild.vscode-bazel"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "terminal.integrated.shellIntegration.history": 1000,
+    "[cmake]": {
+        "editor.defaultFormatter": "cheshirekow.cmake-format"
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "catppuccin.italicComments": false,
+    "catppuccin.italicKeywords": false,
+    "window.customTitleBarVisibility": "auto",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.chat.search.semanticTextResults": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "C_Cpp.formatting": "clangFormat",
+    "dev.containers.dockerPath": "/usr/bin/docker",
+    "python.analysis.aiCodeActions": {
+        "convertFormatString": true,
+        "convertTypeComments": true,
+        "removeUnusedImports": true,
+        "sortImports": true
+    },
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "extensions.autoUpdate": false,
+    "update.mode": "manual",
+    "terminal.integrated.scrollback": 1000000,
+    "window.dialogStyle": "custom",
+    "editor.tokenColorCustomizations": {
+        "[*Light*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#000"
+                    }
+                }
+            ]
+        },
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#fff"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.fontWeight": "600",
+    "clangd.onConfigChanged": "restart",
+    "github.copilot.chat.followUps": "always",
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.chat.search.keywordSuggestions": true,
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "python.analysis.typeCheckingMode": "standard",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "chat.tools.terminal.autoApprove": {
+        "make debug": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "cp": true,
+        "/.*/": true
+    },
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "chat.agent.maxRequests": 20000000,
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.selectedModel": "claude-opus-4-5-20251101",
+    "chat.viewSessions.orientation": "stacked"
+}

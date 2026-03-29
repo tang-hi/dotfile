@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
+## Spotlight-style App Launcher
 
-## Run
 dir="$HOME/.config/rofi/launchers/type-1"
-theme='style-5'
+theme='spotlight'
 
 rofi \
     -show drun \

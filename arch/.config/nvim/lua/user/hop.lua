@@ -1,7 +1,2 @@
-local M = {
-  'smoka7/hop.nvim',
-   version = "*",
-   opts = {},
-}
-
-return M
+-- replaced by flash.nvim, see flash.lua
+return {}

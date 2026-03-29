@@ -1,8 +1,8 @@
-@import "macchiato.css";
+@import "latte.css";
 
 * {
-  font-family: "Maple Mono NF CN", "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: "Maple Mono NF CN", "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 13px;
   min-height: 0;
 }
 
@@ -12,20 +12,19 @@ window#waybar {
 }
 
 tooltip {
-  background: @surface0;
-  border: 2px solid @lavender;
+  background: rgba(239, 241, 245, 0.92);
+  border: 1px solid rgba(220, 224, 232, 0.8);
   border-radius: 12px;
 }
 
 tooltip label {
   color: @text;
-  padding: 5px;
+  padding: 4px 8px;
 }
 
 button {
   box-shadow: none;
   border: none;
-  border-radius: 10px;
 }
 
 button:hover {
@@ -33,21 +32,42 @@ button:hover {
   box-shadow: none;
 }
 
-/* ===== 工作区样式 ===== */
+/* ===== Glass capsule base ===== */
+#workspaces,
+#window,
+#mpris,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#clock,
+#custom-powermenu,
+#custom-weather {
+  background: rgba(239, 241, 245, 0.55);
+  border: 1px solid rgba(220, 224, 232, 0.4);
+  border-radius: 14px;
+  margin: 5px 3px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===== Workspace indicator ===== */
 #workspaces {
-  background: @surface0;
-  border-radius: 12px;
-  padding: 2px 6px;
-  margin: 4px 4px;
+  padding: 2px 4px;
 }
 
 #workspaces button {
-  padding: 4px 8px;
+  padding: 0 4px;
   margin: 2px;
+  min-width: 24px;
+  min-height: 24px;
   background-color: transparent;
   color: @overlay1;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  font-size: 12px;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #workspaces button label {
@@ -56,14 +76,14 @@ button:hover {
 }
 
 #workspaces button:hover {
-  background: @surface1;
-  color: @sky;
+  background: rgba(23, 146, 153, 0.15);
+  color: @teal;
 }
 
 #workspaces button.active {
-  background: @lavender;
+  background: @teal;
   color: @base;
-  border-radius: 8px;
+  min-width: 28px;
 }
 
 #workspaces button.urgent {
@@ -71,17 +91,14 @@ button:hover {
   color: @base;
 }
 
-/* ===== 中间窗口标题 ===== */
+/* ===== Window title ===== */
 #window {
-  background: @surface0;
-  color: @text;
-  border-radius: 12px;
   padding: 4px 16px;
-  margin: 4px;
-  font-weight: bold;
+  color: @text;
+  font-weight: 600;
 }
 
-/* ===== 右侧模块胶囊样式 ===== */
+/* ===== Module padding ===== */
 #battery,
 #cpu,
 #memory,
@@ -89,40 +106,34 @@ button:hover {
 #network,
 #pulseaudio,
 #clock,
-#custom-powermenu {
-  background: @surface0;
-  border-radius: 12px;
-  padding: 4px 12px;
-  margin: 4px 3px;
-  transition: all 0.3s ease;
+#custom-weather,
+#mpris {
+  padding: 4px 14px;
 }
 
-/* 悬停效果 */
+/* ===== Hover: brighten + teal bottom indicator ===== */
 #battery:hover,
 #cpu:hover,
 #memory:hover,
 #temperature:hover,
 #network:hover,
 #pulseaudio:hover,
-#clock:hover {
-  background: @surface1;
+#clock:hover,
+#custom-weather:hover,
+#mpris:hover,
+#window:hover {
+  background: rgba(239, 241, 245, 0.8);
+  box-shadow: inset 0 -2px 0 0 rgba(23, 146, 153, 0.8);
 }
 
-/* ===== 各模块颜色 ===== */
+/* ===== Module accent colors ===== */
 #pulseaudio {
   color: @maroon;
 }
 
 #network {
   color: @yellow;
-}
-
-#temperature {
-  color: @sky;
-}
-
-#battery {
-  color: @green;
+  min-width: 180px;
 }
 
 #cpu {
@@ -135,84 +146,39 @@ button:hover {
   min-width: 60px;
 }
 
-#network {
-  min-width: 180px;
-}
-
 #clock {
   color: @flamingo;
 }
 
+#temperature {
+  color: @sky;
+}
+
+#battery {
+  color: @green;
+}
+
+/* ===== Circular power button ===== */
 #custom-powermenu {
   color: @red;
-  padding: 4px 14px;
-  margin-right: 4px;
+  padding: 4px;
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 50%;
+  font-size: 15px;
+  margin-right: 6px;
 }
 
 #custom-powermenu:hover {
   background: @red;
   color: @base;
+  border-color: @red;
+  box-shadow: 0 0 10px rgba(210, 15, 57, 0.4);
 }
 
-/* ===== 容器样式 ===== */
-.modules-right,
-.modules-left,
-.modules-center {
-  background-color: transparent;
-  border-radius: 0;
-  padding: 0;
-}
-
-/* ===== 电池状态 ===== */
-#battery.charging,
-#battery.plugged {
-  color: @sapphire;
-}
-
-#battery.warning {
-  color: @peach;
-}
-
-#battery.critical:not(.charging) {
-  background: @red;
-  color: @base;
-  animation: blink 0.5s steps(12) infinite alternate;
-}
-
-@keyframes blink {
-  to {
-    background: @maroon;
-  }
-}
-
-/* ===== 静音状态 ===== */
-#pulseaudio.muted {
-  color: @overlay0;
-}
-
-/* ===== 温度警告 ===== */
-#temperature.critical {
-  background: @red;
-  color: @base;
-}
-
-/* ===== 网络断开 ===== */
-#network.disconnected {
-  color: @overlay0;
-}
-
-/* ===== Spotify/MPRIS 播放器样式 ===== */
+/* ===== MPRIS player ===== */
 #mpris {
-  background: @surface0;
-  border-radius: 12px;
-  padding: 4px 12px;
-  margin: 4px 3px;
   color: @green;
-  transition: all 0.3s ease;
-}
-
-#mpris:hover {
-  background: @surface1;
 }
 
 #mpris.playing {
@@ -228,20 +194,57 @@ button:hover {
   color: @overlay0;
 }
 
-/* ===== 天气模块样式 ===== */
+/* ===== Weather ===== */
 #custom-weather {
-  background: @surface0;
-  border-radius: 12px;
-  padding: 4px 12px;
-  margin: 4px 3px;
   color: @sapphire;
-  transition: all 0.3s ease;
-}
-
-#custom-weather:hover {
-  background: @surface1;
 }
 
 #custom-weather.error {
   color: @overlay0;
+}
+
+/* ===== Battery states ===== */
+#battery.charging,
+#battery.plugged {
+  color: @sapphire;
+}
+
+#battery.warning {
+  color: @peach;
+}
+
+#battery.critical:not(.charging) {
+  background: @red;
+  color: @base;
+  border-color: @red;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    background: @maroon;
+  }
+}
+
+/* ===== Muted / disconnected states ===== */
+#pulseaudio.muted {
+  color: @overlay0;
+}
+
+#network.disconnected {
+  color: @overlay0;
+}
+
+#temperature.critical {
+  background: @red;
+  color: @base;
+  border-color: @red;
+}
+
+/* ===== Container reset ===== */
+.modules-right,
+.modules-left,
+.modules-center {
+  background-color: transparent;
+  padding: 0;
 }

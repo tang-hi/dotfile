@@ -1,22 +1,44 @@
--- local M = {
---   "folke/tokyonight.nvim",
---   commit = "e52c41314e83232840d6970e6b072f9fba242eb9",
---   lazy = false,    -- make sure we load this during startup if it is your main colorscheme
---   priority = 1000, -- make sure to load this before all the other start plugins
--- }
---
 local M = {
-    "catppuccin/nvim",
-    lazy = false,
-    priority = 1000,
+  "catppuccin/nvim",
+  name = "catppuccin-latte",
+  lazy = false,
+  priority = 1000,
 }
 
-M.name = "catppuccin-latte"
 function M.config()
-  local status_ok, _ = pcall(vim.cmd.colorscheme, M.name)
-  if not status_ok then
-    return
-  end
+  require("catppuccin").setup {
+    flavour = "latte",
+    background = { light = "latte" },
+    transparent_background = false,
+    term_colors = true,
+    integrations = {
+      cmp = true,
+      dap = true,
+      dap_ui = true,
+      flash = true,
+      gitsigns = true,
+      mason = true,
+      noice = true,
+      notify = true,
+      nvimtree = true,
+      rainbow_delimiters = true,
+      telescope = { enabled = true },
+      treesitter = true,
+      which_key = true,
+      indent_blankline = { enabled = true },
+      native_lsp = {
+        enabled = true,
+        underlines = {
+          errors = { "undercurl" },
+          hints = { "undercurl" },
+          warnings = { "undercurl" },
+          information = { "undercurl" },
+        },
+      },
+      mini = { enabled = true },
+    },
+  }
+  vim.cmd.colorscheme "catppuccin-latte"
 end
 
 return M
