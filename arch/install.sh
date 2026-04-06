@@ -61,6 +61,7 @@ echo "Config directories..."
 config_dirs=(
     hypr
     kitty
+    ghostty
     nvim
     waybar
     rofi

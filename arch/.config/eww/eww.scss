@@ -1,14 +1,14 @@
-// Catppuccin Latte
-$text: #4c4f69;
-$subtext1: #5c5f77;
-$subtext0: #6c6f85;
-$overlay0: #9ca0b0;
-$surface0: #ccd0da;
-$crust: #dce0e8;
-$base: #eff1f5;
-$teal: #179299;
-$mauve: #8839ef;
-$sapphire: #209fb5;
+// Rose Pine Dawn
+$text: #575279;
+$subtext1: #797593;
+$subtext0: #9893a5;
+$overlay0: #9893a5;
+$surface0: #f4ede8;
+$crust: #f2e9e1;
+$base: #faf4ed;
+$teal: #56949f;
+$mauve: #907aa9;
+$sapphire: #56949f;
 
 * {
   all: unset;
@@ -21,8 +21,8 @@ $sapphire: #209fb5;
 
 // ━━━ Glass card ━━━
 .card {
-  background-color: rgba(239, 241, 245, 0.55);
-  border: 1px solid rgba(220, 224, 232, 0.4);
+  background-color: rgba(250, 244, 237, 0.55);
+  border: 1px solid rgba(242, 233, 225, 0.4);
   border-radius: 16px;
   padding: 16px 20px;
 }
@@ -61,7 +61,7 @@ $sapphire: #209fb5;
 }
 
 .cal:indeterminate {
-  color: rgba(76, 79, 105, 0.3);
+  color: rgba(87, 82, 121, 0.3);
 }
 
 .cal.header {
@@ -85,7 +85,7 @@ $sapphire: #209fb5;
 .circle {
   min-width: 52px;
   min-height: 52px;
-  background-color: rgba(204, 208, 218, 0.4);
+  background-color: rgba(244, 237, 232, 0.4);
 }
 
 .circle-cpu  { color: $teal; }

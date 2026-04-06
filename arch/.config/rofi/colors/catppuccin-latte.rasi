@@ -1,22 +1,22 @@
 /**
- * Catppuccin Latte Color Scheme for Rofi
+ * Rose Pine Dawn Color Scheme for Rofi
  **/
 
 * {
-    background:     #eff1f5CC;
-    background-alt: #e6e9efCC;
-    foreground:     #4c4f69FF;
-    selected:       #1e66f5FF;
-    active:         #40a02bFF;
-    urgent:         #d20f39FF;
+    background:     #faf4edCC;
+    background-alt: #fffaf3CC;
+    foreground:     #575279FF;
+    selected:       #56949fFF;
+    active:         #286983FF;
+    urgent:         #b4637aFF;
 
     /* Extended palette */
-    surface0:       #ccd0daFF;
-    surface1:       #bcc0ccFF;
-    overlay0:       #9ca0b0FF;
-    text:           #4c4f69FF;
-    subtext0:       #6c6f85FF;
-    teal:           #179299FF;
-    flamingo:       #dd7878FF;
-    mauve:          #8839efFF;
+    surface0:       #f4ede8FF;
+    surface1:       #dfdad9FF;
+    overlay0:       #9893a5FF;
+    text:           #575279FF;
+    subtext0:       #9893a5FF;
+    teal:           #56949fFF;
+    flamingo:       #d7827eFF;
+    mauve:          #907aa9FF;
 }

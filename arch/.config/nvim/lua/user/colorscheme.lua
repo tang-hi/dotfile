@@ -1,44 +1,29 @@
 local M = {
-  "catppuccin/nvim",
-  name = "catppuccin-latte",
+  "rose-pine/neovim",
+  name = "rose-pine",
   lazy = false,
   priority = 1000,
 }
 
 function M.config()
-  require("catppuccin").setup {
-    flavour = "latte",
-    background = { light = "latte" },
-    transparent_background = false,
-    term_colors = true,
-    integrations = {
-      cmp = true,
-      dap = true,
-      dap_ui = true,
-      flash = true,
-      gitsigns = true,
-      mason = true,
-      noice = true,
-      notify = true,
-      nvimtree = true,
-      rainbow_delimiters = true,
-      telescope = { enabled = true },
-      treesitter = true,
-      which_key = true,
-      indent_blankline = { enabled = true },
-      native_lsp = {
-        enabled = true,
-        underlines = {
-          errors = { "undercurl" },
-          hints = { "undercurl" },
-          warnings = { "undercurl" },
-          information = { "undercurl" },
-        },
-      },
-      mini = { enabled = true },
+  require("rose-pine").setup {
+    variant = "dawn",
+    dark_variant = "moon",
+    styles = {
+      bold = true,
+      italic = false,
+      transparency = true,
+    },
+    highlight_groups = {
+      TelescopeBorder = { fg = "highlight_high", bg = "none" },
+      TelescopeNormal = { bg = "none" },
+      TelescopePromptNormal = { bg = "base" },
+      TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+      TelescopeSelection = { fg = "text", bg = "base" },
+      TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
     },
   }
-  vim.cmd.colorscheme "catppuccin-latte"
+  vim.cmd.colorscheme "rose-pine-dawn"
 end
 
 return M

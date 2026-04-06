@@ -90,7 +90,7 @@
             "commands": ["editor.showTypeHierarchy"]
         }
     ],
-    "workbench.colorTheme": "Catppuccin Latte",
+    "workbench.colorTheme": "Rosé Pine Dawn",
     "hexeditor.columnWidth": 4,
     "hexeditor.showDecodedText": true,
     "hexeditor.defaultEndianness": "little",
@@ -133,8 +133,6 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.intelliSenseEngine": "disabled",
-    "catppuccin.italicComments": false,
-    "catppuccin.italicKeywords": false,
     "window.customTitleBarVisibility": "auto",
     "github.copilot.nextEditSuggestions.enabled": true,
     "github.copilot.chat.generateTests.codeLens": true,
