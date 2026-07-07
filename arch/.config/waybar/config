@@ -52,10 +52,7 @@
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        "sort-by-number": true,
-        "persistent-workspaces": {
-            "*": 4
-        }
+        "sort-by-number": true
     },
     "custom/powermenu": {
         "format": "󰤆",
