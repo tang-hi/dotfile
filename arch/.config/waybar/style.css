@@ -1,25 +1,42 @@
-@import "latte.css"; /* Rose Pine Dawn */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Washi — a quiet paper desktop
+   Ink on warm paper. Two floating islands, one floating title.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@define-color paper    #F5F1E6; /* kinari  — base paper        */
+@define-color surface  #FAF7EF; /* shironeri — raised surface  */
+@define-color surface2 #F1EBDD; /* suna — recessed / hover     */
+@define-color hairline #DBD3C1; /* border line                 */
+@define-color ink      #3E3A32; /* sumi — primary text         */
+@define-color ink2     #6E695C; /* nibi — secondary text       */
+@define-color ink3     #A29B89; /* usuzumi — faint / disabled  */
+@define-color ai       #56708C; /* ainezu — indigo accent      */
+@define-color matsuba  #66774F; /* pine green                  */
+@define-color karashi  #97783C; /* mustard                     */
+@define-color shu      #A85049; /* muted vermillion            */
+@define-color seiji    #5E8A80; /* celadon                     */
 
 * {
-  font-family: "Maple Mono NF CN", "JetBrainsMono Nerd Font", sans-serif;
+  font-family: "Inter", "Maple Mono NF CN", sans-serif;
   font-size: 13px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: transparent;
-  color: @text;
+  background: transparent;
+  color: @ink;
 }
 
 tooltip {
-  background: rgba(250, 244, 237, 0.92);
-  border: 1px solid rgba(242, 233, 225, 0.8);
-  border-radius: 12px;
+  background: alpha(@surface, 0.97);
+  border: 1px solid alpha(@hairline, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px alpha(@ink, 0.08);
 }
 
 tooltip label {
-  color: @text;
-  padding: 4px 8px;
+  color: @ink;
+  padding: 6px 10px;
 }
 
 button {
@@ -32,42 +49,36 @@ button:hover {
   box-shadow: none;
 }
 
-/* ===== Glass capsule base ===== */
-#workspaces,
-#window,
-#mpris,
-#battery,
-#cpu,
-#memory,
-#temperature,
-#network,
-#pulseaudio,
-#clock,
-#custom-powermenu,
-#custom-weather {
-  background: rgba(250, 244, 237, 0.55);
-  border: 1px solid rgba(242, 233, 225, 0.4);
-  border-radius: 14px;
-  margin: 5px 3px;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* ━━━ Paper islands ━━━ */
+.modules-left,
+.modules-right {
+  background: alpha(@surface, 0.85);
+  border: 1px solid alpha(@hairline, 0.85);
+  border-radius: 12px;
+  padding: 0 4px;
+  box-shadow: 0 2px 12px alpha(@ink, 0.07);
 }
 
-/* ===== Workspace indicator ===== */
+.modules-center {
+  background: transparent;
+  padding: 0;
+}
+
+/* ━━━ Workspaces ━━━ */
 #workspaces {
-  padding: 2px 4px;
+  padding: 0 2px;
 }
 
 #workspaces button {
+  font-weight: 500;
+  font-size: 13px;
+  color: @ink3;
+  background: transparent;
+  border-radius: 8px;
+  min-width: 26px;
+  margin: 5px 1px;
   padding: 0 4px;
-  margin: 2px;
-  min-width: 24px;
-  min-height: 24px;
-  background-color: transparent;
-  color: @overlay1;
-  border-radius: 12px;
-  font-size: 12px;
-  border: none;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.25s ease;
 }
 
 #workspaces button label {
@@ -76,175 +87,85 @@ button:hover {
 }
 
 #workspaces button:hover {
-  background: rgba(86, 148, 159, 0.15);
-  color: @teal;
+  background: alpha(@ink, 0.06);
+  color: @ink2;
 }
 
 #workspaces button.active {
-  background: @teal;
-  color: @base;
-  min-width: 28px;
-}
-
-#workspaces button.urgent {
-  background: @red;
-  color: @base;
-}
-
-/* ===== Window title ===== */
-#window {
-  padding: 4px 16px;
-  color: @text;
+  background: alpha(@ai, 0.14);
+  color: @ink;
   font-weight: 600;
 }
 
-/* ===== Module padding ===== */
-#battery,
-#cpu,
-#memory,
-#temperature,
-#network,
-#pulseaudio,
-#clock,
-#custom-weather,
+#workspaces button.urgent {
+  background: alpha(@shu, 0.14);
+  color: @shu;
+}
+
+/* ━━━ Now playing ━━━ */
 #mpris {
-  padding: 4px 14px;
+  color: @ink2;
+  font-size: 12px;
+  padding: 0 12px 0 8px;
 }
 
-/* ===== Hover: brighten + teal bottom indicator ===== */
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#temperature:hover,
-#network:hover,
-#pulseaudio:hover,
-#clock:hover,
-#custom-weather:hover,
-#mpris:hover,
-#window:hover {
-  background: rgba(250, 244, 237, 0.8);
-  box-shadow: inset 0 -2px 0 0 rgba(86, 148, 159, 0.8);
+#mpris.paused,
+#mpris.stopped {
+  color: @ink3;
 }
 
-/* ===== Module accent colors ===== */
-#pulseaudio {
-  color: @maroon;
+/* ━━━ Window title (floats free, no island) ━━━ */
+#window {
+  color: @ink2;
+  font-weight: 500;
+  padding: 0 14px;
 }
 
-#network {
-  color: @yellow;
-  min-width: 180px;
-}
-
-#cpu {
-  color: @teal;
-  min-width: 60px;
-}
-
-#memory {
-  color: @mauve;
-  min-width: 60px;
-}
-
-#clock {
-  color: @flamingo;
-}
-
-#temperature {
-  color: @sky;
-}
-
-#battery {
-  color: @green;
-}
-
-/* ===== Circular power button ===== */
-#custom-powermenu {
-  color: @red;
-  padding: 4px;
-  min-width: 28px;
-  min-height: 28px;
-  border-radius: 50%;
+/* ━━━ Status glyphs ━━━ */
+#pulseaudio,
+#network,
+#bluetooth {
+  color: @ink2;
   font-size: 15px;
-  margin-right: 6px;
+  padding: 0 9px;
+  transition: color 0.2s ease;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover {
+  color: @ink;
+}
+
+#pulseaudio.muted,
+#network.disconnected,
+#network.disabled,
+#bluetooth.disabled,
+#bluetooth.off,
+#bluetooth.no-controller {
+  color: @ink3;
+}
+
+#bluetooth.connected {
+  color: @ai;
+}
+
+/* ━━━ Clock ━━━ */
+#clock {
+  color: @ink;
+  font-weight: 600;
+  font-feature-settings: "tnum";
+  padding: 0 12px;
+}
+
+/* ━━━ Power ━━━ */
+#custom-powermenu {
+  color: @ink3;
+  font-size: 15px;
+  padding: 0 10px 0 6px;
+  transition: color 0.2s ease;
 }
 
 #custom-powermenu:hover {
-  background: @red;
-  color: @base;
-  border-color: @red;
-  box-shadow: 0 0 10px rgba(180, 99, 122, 0.4);
-}
-
-/* ===== MPRIS player ===== */
-#mpris {
-  color: @green;
-}
-
-#mpris.playing {
-  color: @green;
-}
-
-#mpris.paused {
-  color: @yellow;
-  font-style: italic;
-}
-
-#mpris.stopped {
-  color: @overlay0;
-}
-
-/* ===== Weather ===== */
-#custom-weather {
-  color: @sapphire;
-}
-
-#custom-weather.error {
-  color: @overlay0;
-}
-
-/* ===== Battery states ===== */
-#battery.charging,
-#battery.plugged {
-  color: @sapphire;
-}
-
-#battery.warning {
-  color: @peach;
-}
-
-#battery.critical:not(.charging) {
-  background: @red;
-  color: @base;
-  border-color: @red;
-  animation: blink 0.5s steps(12) infinite alternate;
-}
-
-@keyframes blink {
-  to {
-    background: @maroon;
-  }
-}
-
-/* ===== Muted / disconnected states ===== */
-#pulseaudio.muted {
-  color: @overlay0;
-}
-
-#network.disconnected {
-  color: @overlay0;
-}
-
-#temperature.critical {
-  background: @red;
-  color: @base;
-  border-color: @red;
-}
-
-/* ===== Container reset ===== */
-.modules-right,
-.modules-left,
-.modules-center {
-  background-color: transparent;
-  padding: 0;
+  color: @shu;
 }

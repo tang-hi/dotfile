@@ -1,5 +1,5 @@
 /**
- * Power Menu - Catppuccin Latte Glassmorphism
+ * Power Menu — Washi
  * Matches Spotlight launcher aesthetic
  **/
 
@@ -9,10 +9,10 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "~/.config/rofi/colors/catppuccin-latte.rasi"
+@import "~/.config/rofi/colors/washi.rasi"
 
 * {
-    font:                        "Maple Mono NF CN 12";
+    font:                        "Inter 12";
 }
 
 /*****----- Main Window -----*****/
@@ -27,7 +27,7 @@ window {
 
     padding:                     0px;
     border:                      1px solid;
-    border-radius:               20px;
+    border-radius:               14px;
     border-color:                @surface0;
     cursor:                      "default";
     background-color:            @background;
@@ -61,7 +61,7 @@ dummy {
 prompt {
     background-color:            transparent;
     text-color:                  @foreground;
-    font:                        "Maple Mono NF CN 13";
+    font:                        "Inter Medium 12";
 }
 
 /*****----- Listview -----*****/
@@ -90,7 +90,7 @@ element {
     enabled:                     true;
     padding:                     16px 8px;
     border:                      0px;
-    border-radius:               14px;
+    border-radius:               12px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     cursor:                      pointer;
@@ -107,8 +107,8 @@ element-text {
 
 element selected.normal {
     background-color:            @teal;
-    text-color:                  #eff1f5FF;
-    border-radius:               14px;
+    text-color:                  #FAF7EFFF;
+    border-radius:               12px;
 }
 
 /*****----- Message -----*****/
@@ -124,9 +124,9 @@ message {
 textbox {
     padding:                     12px 16px;
     border:                      0px;
-    border-radius:               12px;
+    border-radius:               10px;
     background-color:            @background-alt;
-    text-color:                  @overlay0;
+    text-color:                  @subtext0;
     vertical-align:              0.5;
     horizontal-align:            0.5;
     font:                        "Maple Mono NF CN 10";

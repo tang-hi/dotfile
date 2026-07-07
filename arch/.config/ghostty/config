@@ -7,8 +7,8 @@ font-size = 16
 # ============================================
 # Cursor
 # ============================================
-cursor-color = #56949f
-cursor-text = #faf4ed
+cursor-color = #56708C
+cursor-text = #F7F4EB
 cursor-style = bar
 cursor-style-blink = true
 
@@ -22,7 +22,7 @@ scrollback-limit = 10000
 # ============================================
 window-padding-x = 25
 window-padding-y = 25
-background-opacity = 0.88
+background-opacity = 0.94
 background-blur-radius = 20
 window-decoration = false
 confirm-close-surface = false
@@ -39,37 +39,37 @@ mouse-hide-while-typing = true
 shell-integration = detect
 
 # ============================================
-# Colors - Rose Pine Dawn
+# Colors - Washi (ink on warm paper)
 # ============================================
-foreground = #575279
-background = #faf4ed
-selection-foreground = #575279
-selection-background = #dfdad9
+foreground = #3E3A32
+background = #F7F4EB
+selection-foreground = #3E3A32
+selection-background = #E7E0CD
 
-# black
-palette = 0=#f2e9e1
-palette = 8=#9893a5
-# red
-palette = 1=#b4637a
-palette = 9=#b4637a
-# green
-palette = 2=#286983
-palette = 10=#286983
-# yellow
-palette = 3=#ea9d34
-palette = 11=#ea9d34
-# blue
-palette = 4=#56949f
-palette = 12=#56949f
-# magenta
-palette = 5=#907aa9
-palette = 13=#907aa9
-# cyan
-palette = 6=#d7827e
-palette = 14=#d7827e
-# white
-palette = 7=#575279
-palette = 15=#575279
+# black (light surface, per light-theme convention)
+palette = 0=#E9E4D6
+palette = 8=#A29B89
+# red — shu (rust vermillion)
+palette = 1=#A85049
+palette = 9=#B25A52
+# green — matsuba (pine needle)
+palette = 2=#66774F
+palette = 10=#74875C
+# yellow — karashi (mustard)
+palette = 3=#97783C
+palette = 11=#A8874A
+# blue — ainezu (indigo gray)
+palette = 4=#56708C
+palette = 12=#67809C
+# magenta — fujinezu (wisteria gray)
+palette = 5=#7D7397
+palette = 13=#8D83A8
+# cyan — seiji (celadon)
+palette = 6=#5E8A80
+palette = 14=#6E9A90
+# white (ink)
+palette = 7=#4A463E
+palette = 15=#3E3A32
 
 # ============================================
 # Keybindings

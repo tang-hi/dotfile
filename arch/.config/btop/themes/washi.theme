@@ -1,0 +1,81 @@
+# ━━━ Washi — ink on warm paper (btop) ━━━
+
+# Main background and foreground
+theme[main_bg]="#F7F4EB"
+theme[main_fg]="#3E3A32"
+
+# Title color for boxes
+theme[title]="#3E3A32"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#56708C"
+
+# Selected item in processes box
+theme[selected_bg]="#E7E0CD"
+theme[selected_fg]="#3E3A32"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#A29B89"
+
+# Color of text appearing on top of graphs
+theme[graph_text]="#6E695C"
+
+# Background color of the percentage meters
+theme[meter_bg]="#E9E4D6"
+
+# Misc colors for processes box
+theme[proc_misc]="#5E8A80"
+
+# Box outline colors
+theme[cpu_box]="#DBD3C1"
+theme[mem_box]="#DBD3C1"
+theme[net_box]="#DBD3C1"
+theme[proc_box]="#DBD3C1"
+
+# Box divider lines and small box borders
+theme[div_line]="#DBD3C1"
+
+# Temperature graph (matsuba → karashi → shu)
+theme[temp_start]="#66774F"
+theme[temp_mid]="#97783C"
+theme[temp_end]="#A85049"
+
+# CPU graph
+theme[cpu_start]="#66774F"
+theme[cpu_mid]="#97783C"
+theme[cpu_end]="#A85049"
+
+# Mem/Disk free meter (seiji)
+theme[free_start]="#6E9A90"
+theme[free_mid]="#5E8A80"
+theme[free_end]="#4F776E"
+
+# Mem/Disk cached meter (fuji)
+theme[cached_start]="#8D83A8"
+theme[cached_mid]="#7D7397"
+theme[cached_end]="#6C6384"
+
+# Mem/Disk available meter (karashi)
+theme[available_start]="#A8874A"
+theme[available_mid]="#97783C"
+theme[available_end]="#856931"
+
+# Mem/Disk used meter (shu)
+theme[used_start]="#B25A52"
+theme[used_mid]="#A85049"
+theme[used_end]="#94443E"
+
+# Download graph (ai)
+theme[download_start]="#67809C"
+theme[download_mid]="#56708C"
+theme[download_end]="#485F79"
+
+# Upload graph (fuji)
+theme[upload_start]="#8D83A8"
+theme[upload_mid]="#7D7397"
+theme[upload_end]="#6C6384"
+
+# Process box color gradient for threads, mem and cpu usage
+theme[process_start]="#56708C"
+theme[process_mid]="#5E8A80"
+theme[process_end]="#A85049"

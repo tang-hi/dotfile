@@ -1,6 +1,6 @@
 /**
  * Spotlight-style Launcher
- * Catppuccin Latte + Glassmorphism
+ * Washi — ink on warm paper
  **/
 
 /*****----- Configuration -----*****/
@@ -16,10 +16,10 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "~/.config/rofi/colors/catppuccin-latte.rasi"
+@import "~/.config/rofi/colors/washi.rasi"
 
 * {
-    font:                        "Maple Mono NF CN 13";
+    font:                        "Inter 13";
     border-colour:               var(surface0);
     handle-colour:               var(selected);
     background-colour:           var(background);
@@ -28,21 +28,21 @@ configuration {
     normal-background:           transparent;
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
-    urgent-foreground:           #eff1f5FF;
+    urgent-foreground:           #FAF7EFFF;
     active-background:           var(active);
-    active-foreground:           #eff1f5FF;
+    active-foreground:           #FAF7EFFF;
     selected-normal-background:  var(selected);
-    selected-normal-foreground:  #eff1f5FF;
+    selected-normal-foreground:  #FAF7EFFF;
     selected-urgent-background:  var(urgent);
-    selected-urgent-foreground:  #eff1f5FF;
+    selected-urgent-foreground:  #FAF7EFFF;
     selected-active-background:  var(active);
-    selected-active-foreground:  #eff1f5FF;
+    selected-active-foreground:  #FAF7EFFF;
     alternate-normal-background: transparent;
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
-    alternate-urgent-foreground: #eff1f5FF;
+    alternate-urgent-foreground: #FAF7EFFF;
     alternate-active-background: var(active);
-    alternate-active-foreground: #eff1f5FF;
+    alternate-active-foreground: #FAF7EFFF;
 }
 
 /*****----- Main Window -----*****/
@@ -59,7 +59,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      1px solid;
-    border-radius:               16px;
+    border-radius:               14px;
     border-color:                @border-colour;
     cursor:                      "default";
     background-color:            @background-colour;
@@ -107,9 +107,9 @@ entry {
     background-color:            transparent;
     text-color:                  @foreground-colour;
     cursor:                      text;
-    placeholder:                 "Search applications...";
+    placeholder:                 "Search…";
     placeholder-color:           @overlay0;
-    font:                        "Maple Mono NF CN 15";
+    font:                        "Inter 14";
 }
 
 /*****----- Listview -----*****/
@@ -143,7 +143,7 @@ element {
     margin:                      0px;
     padding:                     10px 14px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               10px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;

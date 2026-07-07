@@ -79,11 +79,12 @@ for dir in "${config_dirs[@]}"; do
     link_file "$DOTFILES_DIR/.config/$dir" "$HOME/.config/$dir"
 done
 
-# Fcitx5 theme
+# Fcitx5 themes
 echo ""
-echo "Fcitx5 theme..."
+echo "Fcitx5 themes..."
 mkdir -p "$HOME/.local/share/fcitx5/themes"
 link_file "$DOTFILES_DIR/.local/share/fcitx5/themes/catppuccin-latte-teal" "$HOME/.local/share/fcitx5/themes/catppuccin-latte-teal"
+link_file "$DOTFILES_DIR/.local/share/fcitx5/themes/washi" "$HOME/.local/share/fcitx5/themes/washi"
 
 # VSCode: only symlink settings.json (User dir has local state)
 echo ""

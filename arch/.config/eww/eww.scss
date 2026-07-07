@@ -1,129 +1,154 @@
-// Rose Pine Dawn
-$text: #575279;
-$subtext1: #797593;
-$subtext0: #9893a5;
-$overlay0: #9893a5;
-$surface0: #f4ede8;
-$crust: #f2e9e1;
-$base: #faf4ed;
-$teal: #56949f;
-$mauve: #907aa9;
-$sapphire: #56949f;
+// ━━━ Washi — ink on warm paper ━━━
+
+$paper:    #F5F1E6;
+$surface:  #FAF7EF;
+$surface2: #F1EBDD;
+$hairline: #DBD3C1;
+$ink:      #3E3A32;
+$ink2:     #6E695C;
+$ink3:     #A29B89;
+$ai:       #56708C; // indigo
+$fuji:     #7D7397; // wisteria
+$seiji:    #5E8A80; // celadon
+$shu:      #A85049; // vermillion
+$karashi:  #97783C; // mustard
 
 * {
   all: unset;
-  font-family: "Maple Mono NF CN", monospace;
+  font-family: "Inter", "Maple Mono NF CN", sans-serif;
 }
 
 .dashboard {
   padding: 0;
 }
 
-// ━━━ Glass card ━━━
+// ━━━ Paper card ━━━
 .card {
-  background-color: rgba(250, 244, 237, 0.55);
-  border: 1px solid rgba(242, 233, 225, 0.4);
-  border-radius: 16px;
-  padding: 16px 20px;
+  background-color: rgba(250, 247, 239, 0.85);
+  border: 1px solid rgba(219, 211, 193, 0.85);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 12px rgba(62, 58, 50, 0.07);
 }
 
 // ━━━ Clock ━━━
 .clock-card {
-  padding: 20px 24px;
+  padding: 20px 22px;
 }
 
 .clock-time {
-  font-size: 42px;
-  font-weight: 700;
-  color: $text;
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: $ink;
+  font-feature-settings: "tnum";
+}
+
+.clock-accent {
+  background-color: rgba(168, 80, 73, 0.85); // one quiet stroke of vermillion
+  border-radius: 2px;
+  min-width: 26px;
+  min-height: 3px;
 }
 
 .clock-date {
   font-size: 13px;
-  color: $subtext0;
-  margin-top: 2px;
+  font-weight: 500;
+  color: $ink2;
 }
 
 // ━━━ Calendar ━━━
 .cal-card {
-  padding: 12px 16px;
+  padding: 14px 16px;
 }
 
 .cal {
-  color: $text;
-  font-size: 11px;
+  color: $ink2;
+  font-size: 12px;
 }
 
 .cal:selected {
-  color: white;
-  background-color: $teal;
-  border-radius: 8px;
+  color: #ffffff;
+  background-color: $ai;
+  border-radius: 6px;
 }
 
 .cal:indeterminate {
-  color: rgba(87, 82, 121, 0.3);
+  color: rgba(162, 155, 137, 0.5);
 }
 
 .cal.header {
-  color: $teal;
+  color: $ink;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.cal.highlight {
+  color: $karashi;
+  font-weight: 600;
 }
 
 .cal.button {
-  color: $overlay0;
+  color: $ink3;
+
   &:hover {
-    color: $teal;
+    color: $ai;
   }
 }
 
-// ━━━ System monitor ━━━
+// ━━━ System meters ━━━
 .sys-card {
-  padding: 16px;
+  padding: 18px 20px;
 }
 
-.circle {
-  min-width: 52px;
-  min-height: 52px;
-  background-color: rgba(244, 237, 232, 0.4);
+.meter-name {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: $ink3;
 }
 
-.circle-cpu  { color: $teal; }
-.circle-ram  { color: $mauve; }
-.circle-disk { color: $sapphire; }
-
-.sys-icon {
-  font-size: 18px;
-  color: $text;
-}
-
-.sys-val {
+.meter-val {
   font-size: 12px;
   font-weight: 600;
-  color: $text;
+  color: $ink2;
+  font-feature-settings: "tnum";
 }
 
-.sys-name {
-  font-size: 10px;
-  color: $overlay0;
+.meter-bar {
+  trough {
+    background-color: $surface2;
+    border-radius: 99px;
+    min-height: 5px;
+
+    progress {
+      border-radius: 99px;
+      min-height: 5px;
+    }
+  }
 }
+
+.bar-cpu trough progress  { background-color: $ai; }
+.bar-ram trough progress  { background-color: $fuji; }
+.bar-disk trough progress { background-color: $seiji; }
 
 // ━━━ Weather ━━━
 .weather-card {
-  padding: 16px 20px;
+  padding: 18px 20px;
 }
 
 .weather-icon {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .weather-temp {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 600;
-  color: $text;
+  color: $ink;
+  font-feature-settings: "tnum";
 }
 
 .weather-desc {
   font-size: 12px;
-  color: $subtext0;
+  color: $ink2;
 }

@@ -1,0 +1,23 @@
+/**
+ * Washi — ink on warm paper
+ * Rofi color scheme (key-compatible with the adi1090x styles)
+ **/
+
+* {
+    background:     #FAF7EFCC;   /* shironeri paper, frosted */
+    background-alt: #F1EBDDCC;   /* suna, recessed           */
+    foreground:     #3E3A32FF;   /* sumi ink                 */
+    selected:       #56708CFF;   /* ainezu indigo            */
+    active:         #5E8A80FF;   /* seiji celadon            */
+    urgent:         #A85049FF;   /* shu vermillion           */
+
+    /* Extended palette */
+    surface0:       #DBD3C1FF;   /* hairline border          */
+    surface1:       #E9E4D6FF;
+    overlay0:       #A29B89FF;   /* usuzumi faint            */
+    text:           #3E3A32FF;
+    subtext0:       #6E695CFF;
+    teal:           #56708CFF;   /* mapped to indigo accent  */
+    flamingo:       #A85049FF;
+    mauve:          #7D7397FF;
+}
