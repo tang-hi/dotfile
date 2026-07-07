@@ -69,7 +69,6 @@ function M.config()
     Event = "",
     Operator = "󰆕",
     TypeParameter = "󰊄",
-    Codeium = "󰚩",
     Copilot = "",
   }
 
@@ -93,10 +92,12 @@ function M.config()
       -- Set `select` to `false` to only confirm explicitly selected items.
       ["<CR>"] = cmp.mapping.confirm { select = true },
       ["<Tab>"] = cmp.mapping(function(fallback)
-        local copilot = require("copilot.suggestion")
-        if copilot.is_visible() then
-          copilot.accept()
-        elseif cmp.visible() then
+        local dopilot_ok, dopilot = pcall(require, "dopilot")
+        if dopilot_ok and dopilot.tab() then
+          return
+        end
+
+        if cmp.visible() then
           cmp.select_next_item()
         elseif luasnip.expandable() then
           luasnip.expand()
@@ -158,13 +159,6 @@ function M.config()
       ghost_text = false,
     },
   }
-
-  cmp.event:on("menu_opened", function()
-    vim.b.copilot_suggestion_hidden = true
-  end)
-  cmp.event:on("menu_closed", function()
-    vim.b.copilot_suggestion_hidden = false
-  end)
 end
 
 return M

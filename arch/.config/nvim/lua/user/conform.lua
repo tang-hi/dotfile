@@ -24,7 +24,7 @@ return {
     },
     formatters = {
       ["clang-format"] = {
-        prepend_args = { "-style=Google" },
+        prepend_args = { "-style=file", "--fallback-style=Google" },
       },
       black = {
         prepend_args = { "--fast", "-l", "80" },

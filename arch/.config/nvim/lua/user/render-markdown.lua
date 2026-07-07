@@ -5,7 +5,10 @@ local M = {
         'nvim-treesitter/nvim-treesitter',
         'echasnovski/mini.nvim',  -- 修正依赖项名称
     },
-    opts = {},  -- 使用默认配置，lazy.nvim 会自动调用 setup()
+    opts = {
+        -- 关掉 anti-conceal：光标所在行也保持渲染，不再揭示成原始文本
+        anti_conceal = { enabled = false },
+    },
 }
 
 return M

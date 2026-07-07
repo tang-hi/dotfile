@@ -7,7 +7,7 @@ get_weather() {
     weather=$(curl -sf "wttr.in/?format=%c%t" 2>/dev/null)
 
     if [[ -z "$weather" ]]; then
-        echo '{"text": "N/A", "tooltip": "无法获取天气", "class": "error"}'
+        echo '{"text": "Weather", "tooltip": "Weather unavailable", "class": "error"}'
         return
     fi
 

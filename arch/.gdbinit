@@ -1,6 +1,6 @@
 python
 import os, sys
-sys.path.insert(0, '/usr/share/gcc-14.2.1/python/')
+sys.path.insert(0, '/usr/share/gcc-15.2.1/python/')
 from libstdcxx.v6.printers import register_libstdcxx_printers
 register_libstdcxx_printers(None)
 

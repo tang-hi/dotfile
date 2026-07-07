@@ -28,9 +28,12 @@ local settings = {
 
 function M.config()
 	require("mason").setup(settings)
+	-- mason-lspconfig v2: `automatic_installation` was removed. `automatic_enable`
+	-- (default true) calls vim.lsp.enable() for each installed server, so we no
+	-- longer iterate servers in lsp.lua to call lspconfig[server].setup().
 	require("mason-lspconfig").setup({
 		ensure_installed = require("utils").servers,
-		automatic_installation = true,
+		automatic_enable = true,
 	})
 end
 

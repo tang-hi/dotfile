@@ -42,6 +42,11 @@ function M.config()
   local spaces = function()
     return "spaces: " .. vim.bo.shiftwidth
   end
+
+  local dopilot = function()
+    local ok, dopilot_status = pcall(require, "dopilot.status")
+    return ok and dopilot_status.component() or ""
+  end
   lualine.setup {
     options = {
       globalstatus = true,
@@ -56,7 +61,7 @@ function M.config()
       lualine_a = { "mode" },
       lualine_b = { "branch" },
       lualine_c = { diagnostics },
-      lualine_x = { diff, spaces, "encoding", filetype },
+      lualine_x = { dopilot, diff, spaces, "encoding", filetype },
       lualine_y = { location },
       lualine_z = { "progress" },
     },
