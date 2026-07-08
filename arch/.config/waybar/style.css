@@ -150,6 +150,20 @@ button:hover {
   color: @ai;
 }
 
+/* ━━━ AirPods battery (via librepods) ━━━ */
+#custom-airpods {
+  color: @ink2;
+  font-size: 12px;
+  font-weight: 500;
+  font-feature-settings: "tnum";
+  padding: 0 10px 0 0;
+  margin-left: -3px;
+}
+
+#custom-airpods.low {
+  color: @shu;
+}
+
 /* ━━━ Clock ━━━ */
 #clock {
   color: @ink;
