@@ -130,7 +130,9 @@ button:hover {
   padding: 0 14px;
 }
 
-/* ━━━ Status glyphs ━━━ */
+/* ━━━ Status glyphs ━━━
+   Optically even 16px gaps: padding differs per module because each
+   glyph carries different side bearings — don't equalize the numbers */
 #pulseaudio,
 #network,
 #bluetooth {
@@ -138,6 +140,10 @@ button:hover {
   font-size: 15px;
   padding: 0 9px;
   transition: color 0.2s ease;
+}
+
+#bluetooth {
+  padding: 0 9px 0 12px;
 }
 
 #pulseaudio:hover,
@@ -177,14 +183,14 @@ button:hover {
   color: @ink;
   font-weight: 600;
   font-feature-settings: "tnum";
-  padding: 0 12px;
+  padding: 0 12px 0 6px;
 }
 
 /* ━━━ Power ━━━ */
 #custom-powermenu {
   color: @ink3;
   font-size: 15px;
-  padding: 0 10px 0 6px;
+  padding: 0 10px 0 4px;
   transition: color 0.2s ease;
 }
 
