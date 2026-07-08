@@ -1,45 +1,53 @@
 #!/bin/bash
 # AirPods battery for waybar. Primary source: librepods' StatusNotifierItem
 # tooltip over D-Bus (accurate, per-bud). librepods draws its own tray pixmap
-# (unstylable), so the bar skips the tray and renders the number itself.
-# Falls back to BlueZ (coarse, 10% steps) when librepods is not running.
-# Usage: airpods.sh [activate]
+# (unstylable), so the bar skips the tray and renders the glyph itself.
+# Falls back to BlueZ audio devices (coarse, 10% steps) when librepods has
+# no data. Usage: airpods.sh [activate]
 #   (no arg)  print waybar JSON {text, tooltip, class}; empty text when absent
 #   activate  open the librepods window (same as clicking its tray icon)
 
-# Waybar removed its tray, so no StatusNotifierWatcher registry exists;
-# probe librepods' bus connections for the SNI object directly.
-find_librepods() {
-    local addr
-    while read -r addr; do
-        if busctl --user get-property "$addr" /StatusNotifierItem \
-            org.kde.StatusNotifierItem Id 2>/dev/null | grep -q '"librepods"'; then
-            printf '%s\n' "$addr"
-            return 0
-        fi
-    done < <(busctl --user list --no-pager 2>/dev/null |
-        awk '$1 ~ /^:/ && $3 == "librepods" {print $1}')
-    return 1
+# All bus connections owned by librepods processes, newest first. Duplicate
+# or restarted instances leave stale SNI objects with empty tooltips behind,
+# so callers must scan until they find one that actually carries battery data.
+librepods_addrs() {
+    busctl --user list --no-pager 2>/dev/null |
+        awk '$1 ~ /^:/ && $3 == "librepods" {print $1}' |
+        sort -t. -k2,2nr
+}
+
+sni_tooltip() {
+    busctl --user get-property "$1" /StatusNotifierItem \
+        org.kde.StatusNotifierItem ToolTip 2>/dev/null
 }
 
 emit() { printf '{"text": "%s", "tooltip": "%s", "class": "%s"}\n' "$1" "$2" "$3"; }
 
 low_class() { (($1 <= 20)) && echo low || echo connected; }
 
-ADDR=$(find_librepods)
+# Prefer the connection with live battery data; remember any responsive one
+LIVE_ADDR="" ANY_ADDR="" LIVE_TOOLTIP=""
+for addr in $(librepods_addrs); do
+    tt=$(sni_tooltip "$addr") || continue
+    [[ -n $tt ]] && ANY_ADDR=${ANY_ADDR:-$addr}
+    if [[ $tt == *"Left:"* || $tt == *"Right:"* ]]; then
+        LIVE_ADDR=$addr
+        LIVE_TOOLTIP=$tt
+        break
+    fi
+done
 
 if [[ $1 == activate ]]; then
-    [[ -n $ADDR ]] && exec busctl --user call "$ADDR" /StatusNotifierItem \
+    addr=${LIVE_ADDR:-$ANY_ADDR}
+    [[ -n $addr ]] && exec busctl --user call "$addr" /StatusNotifierItem \
         org.kde.StatusNotifierItem Activate ii 0 0
     exit 0
 fi
 
-if [[ -n $ADDR ]]; then
-    tooltip=$(busctl --user get-property "$ADDR" /StatusNotifierItem \
-        org.kde.StatusNotifierItem ToolTip 2>/dev/null)
-    left=$(grep -oP 'Left: \K[0-9]+' <<<"$tooltip")
-    right=$(grep -oP 'Right: \K[0-9]+' <<<"$tooltip")
-    case_=$(grep -oP 'Case: \K[0-9]+' <<<"$tooltip")
+if [[ -n $LIVE_TOOLTIP ]]; then
+    left=$(grep -oP 'Left: \K[0-9]+' <<<"$LIVE_TOOLTIP")
+    right=$(grep -oP 'Right: \K[0-9]+' <<<"$LIVE_TOOLTIP")
+    case_=$(grep -oP 'Case: \K[0-9]+' <<<"$LIVE_TOOLTIP")
 
     # Lowest charged bud is the number that matters; 0 means absent/no reading
     min=""
