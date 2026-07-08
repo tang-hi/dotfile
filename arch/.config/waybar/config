@@ -51,7 +51,30 @@
         "separate-outputs": true
     },
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{windows}",
+        "format-window-separator": "  ",
+        "window-rewrite-default": "󰣆",
+        "window-rewrite": {
+            "class<firefox>": "󰈹",
+            "class<google-chrome|Chromium|chromium>": "󰊯",
+            "class<Code|code-url-handler|VSCodium|codium>": "󰨞",
+            "class<com.mitchellh.ghostty>": "󰊠",
+            "class<kitty|Alacritty|foot>": "",
+            "class<Spotify|spotify>": "󰓇",
+            "class<discord|WebCord|vesktop>": "󰙯",
+            "class<org.telegram.desktop|Telegram>": "󰔁",
+            "class<vlc>": "󰕼",
+            "class<mpv>": "",
+            "class<org.kde.dolphin|thunar|org.gnome.Nautilus>": "󰉋",
+            "class<steam>": "󰓓",
+            "class<com.obsproject.Studio>": "󰑋",
+            "class<Gimp|gimp>": "󰏘",
+            "class<Blender|blender>": "󰂫",
+            "class<pavucontrol|org.pulseaudio.pavucontrol>": "󰕾",
+            "class<systemsettings>": "",
+            "class<jetbrains-(.*)>": "",
+            "class<Signal>": "󰭹"
+        },
         "on-click": "activate",
         "sort-by-number": true
     },
