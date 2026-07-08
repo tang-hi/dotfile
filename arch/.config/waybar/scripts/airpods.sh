@@ -54,9 +54,12 @@ if [[ -n $ADDR ]]; then
     fi
 fi
 
-# BlueZ fallback: first connected device that reports a battery
+# BlueZ fallback: first connected AUDIO device that reports a battery
+# (Icon: audio-*), so a keyboard's battery never poses as earbuds
 info=$(bluetoothctl devices Connected 2>/dev/null | while read -r _ mac name; do
-    batt=$(bluetoothctl info "$mac" 2>/dev/null | grep -oP 'Battery Percentage:.*\(\K[0-9]+')
+    dev=$(bluetoothctl info "$mac" 2>/dev/null)
+    grep -q 'Icon: audio' <<<"$dev" || continue
+    batt=$(grep -oP 'Battery Percentage:.*\(\K[0-9]+' <<<"$dev")
     [[ -n $batt ]] && { printf '%s\t%s\n' "$batt" "$name"; break; }
 done)
 if [[ -n $info ]]; then

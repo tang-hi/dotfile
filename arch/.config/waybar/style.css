@@ -75,10 +75,13 @@ button:hover {
   color: @ink2;
   background: transparent;
   border-radius: 8px;
-  min-width: 26px;
-  margin: 5px 1px;
-  padding: 0 7px;
+  margin: 5px 2px;
+  padding: 0 8px;
   transition: all 0.25s ease;
+}
+
+#workspaces button.empty {
+  min-width: 18px;
 }
 
 #workspaces button label {
@@ -89,6 +92,12 @@ button:hover {
 #workspaces button:hover {
   background: alpha(@ink, 0.06);
   color: @ink2;
+}
+
+/* visible on its monitor, focus elsewhere */
+#workspaces button.visible {
+  background: alpha(@ink, 0.05);
+  color: @ink;
 }
 
 #workspaces button.active {
@@ -156,8 +165,7 @@ button:hover {
   font-size: 13px;
   font-weight: 500;
   font-feature-settings: "tnum";
-  padding: 0 10px 0 0;
-  margin-left: -3px;
+  padding: 0 9px;
 }
 
 #custom-airpods.low {

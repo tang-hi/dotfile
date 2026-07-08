@@ -53,7 +53,7 @@ type — all UI text stays in English.
 | Component | Files                                          | Notes |
 |-----------|------------------------------------------------|-------|
 | Waybar    | `waybar/config`, `waybar/style.css`            | Two paper islands — left (workspaces + now playing), right (status + clock) — with a free-floating centered title; CPU/MEM/weather modules removed |
-| AirPods   | `waybar/scripts/airpods.sh`                    | quiet battery number beside the bluetooth glyph, read from librepods' SNI tooltip over D-Bus (per-bud, accurate); BlueZ fallback; turns vermillion at ≤20%; click opens librepods. No tray module — librepods and fcitx5 draw their own tray pixmaps, which can't be styled |
+| AirPods   | `waybar/scripts/airpods.sh`                    | earbuds glyph + battery beside the bluetooth glyph, read from librepods' SNI tooltip over D-Bus (per-bud, accurate); falls back to BlueZ audio devices only; hides when nothing is connected; turns vermillion at ≤20%; click opens librepods. No tray module — librepods and fcitx5 draw their own tray pixmaps, which can't be styled |
 | eww       | `eww/eww.yuck`, `eww/eww.scss`, `eww/scripts/` | Clock card (one vermillion stroke), calendar card, thin-line meters (CPU/RAM/Disk), weather card; `start.sh` restored, `weather.sh` added |
 | Hyprland  | `hypr/hyprland.conf`                           | gaps 6/14, rounding 12, paper shadows, ainezu active border, calm animations, blur layer rules for waybar/eww/dunst |
 | Ghostty   | `ghostty/config`                               | washi 16-color palette, opacity 0.94 (reload open windows with Ctrl+Shift+F5) |

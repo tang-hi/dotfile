@@ -55,25 +55,46 @@
         "format-window-separator": "  ",
         "window-rewrite-default": "󰣆",
         "window-rewrite": {
-            "class<firefox>": "󰈹",
-            "class<google-chrome|Chromium|chromium>": "󰊯",
-            "class<Code|code-url-handler|VSCodium|codium>": "󰨞",
+            "class<wechat(\\.exe)?|WeChat>": "󰘑",
+            "class<QQ|qq>": "󰘅",
+            "class<firefox|librewolf|floorp|zen(-browser)?>": "󰈹",
+            "class<google-chrome|Chromium|chromium|brave-browser|vivaldi.*>": "󰊯",
+            "class<microsoft-edge.*|Microsoft-edge.*>": "󰇩",
+            "class<chrome-.*>": "󰖟",
+            "class<Code|code-url-handler|VSCodium|codium|cursor>": "󰨞",
+            "class<jetbrains-(.*)>": "",
+            "class<neovide>": "",
+            "class<sublime_text>": "󰅳",
+            "class<obsidian>": "󰠮",
             "class<com.mitchellh.ghostty>": "󰊠",
-            "class<kitty|Alacritty|foot>": "",
+            "class<kitty|Alacritty|foot|org.wezfurlong.wezterm|konsole>": "",
             "class<Spotify|spotify>": "󰓇",
+            "class<netease-cloud-music|yesplaymusic|youtube-music>": "󰝚",
             "class<discord|WebCord|vesktop>": "󰙯",
             "class<org.telegram.desktop|Telegram>": "󰔁",
+            "class<Slack>": "󰒱",
+            "class<whatsapp.*|WhatsApp.*>": "󰖣",
+            "class<teams.*|Microsoft Teams.*>": "󰊻",
+            "class<Zoom|zoom>": "󰕧",
+            "class<Signal>": "󰭹",
+            "class<thunderbird|evolution|org.gnome.Evolution>": "󰇮",
             "class<vlc>": "󰕼",
             "class<mpv>": "",
-            "class<org.kde.dolphin|thunar|org.gnome.Nautilus>": "󰉋",
-            "class<steam>": "󰓓",
             "class<com.obsproject.Studio>": "󰑋",
-            "class<Gimp|gimp>": "󰏘",
+            "class<kdenlive|org.kde.kdenlive>": "󰕧",
+            "class<Gimp.*|gimp|krita|Inkscape|org.inkscape.Inkscape>": "󰏘",
+            "class<darktable>": "󰄀",
             "class<Blender|blender>": "󰂫",
+            "class<org.kde.dolphin|thunar|org.gnome.Nautilus|nemo|pcmanfm.*>": "󰉋",
+            "class<org.pwmt.zathura|okular|org.kde.okular|evince|org.gnome.Evince>": "󰈦",
+            "class<libreoffice.*|soffice.*>": "󰈬",
+            "class<steam>": "󰓓",
+            "class<lutris|heroic|net.retrodeck.*|retroarch>": "󰊖",
+            "class<qbittorrent|org.qbittorrent.qBittorrent|transmission.*>": "󰇚",
+            "class<virt-manager|VirtualBox.*>": "󰍹",
             "class<pavucontrol|org.pulseaudio.pavucontrol>": "󰕾",
-            "class<systemsettings>": "",
-            "class<jetbrains-(.*)>": "",
-            "class<Signal>": "󰭹"
+            "class<systemsettings|nwg-look|org.gnome.Settings>": "",
+            "class<.*\\.exe>": "󰖳"
         },
         "on-click": "activate",
         "sort-by-number": true
@@ -87,7 +108,7 @@
         "exec": "~/.config/waybar/scripts/airpods.sh",
         "return-type": "json",
         "interval": 15,
-        "format": "{}",
+        "format": "󱡏 {}",
         "hide-empty-text": true,
         "on-click": "~/.config/waybar/scripts/airpods.sh activate"
     },
@@ -141,15 +162,8 @@
         "on-click": "systemsettings kcm_bluetooth"
     },
     "mpris": {
-        "format": "{player_icon}  {dynamic}",
-        "format-paused": "{status_icon}  {dynamic}",
-        "player-icons": {
-            "default": "󰝚",
-            "spotify": "󰓇"
-        },
-        "status-icons": {
-            "paused": "󰏤"
-        },
+        "format": "󰝚  {dynamic}",
+        "format-paused": "󰏤  {dynamic}",
         "dynamic-order": [
             "title",
             "artist"
