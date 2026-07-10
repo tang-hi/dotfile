@@ -115,12 +115,12 @@
     "clock": {
         "format": "{:%H:%M}",
         "format-alt": "{:%a %b %-d  %H:%M}",
-        "tooltip-format": "<span color='#6E695C'>{:%B %Y}</span>\n<tt>{calendar}</tt>",
+        "tooltip-format": "<span color='#6B6862'>{:%B %Y}</span>\n<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
             "format": {
-                "months": "<span color='#3E3A32'><b>{}</b></span>",
-                "days": "<span color='#6E695C'>{}</span>",
+                "months": "<span color='#3A3835'><b>{}</b></span>",
+                "days": "<span color='#6B6862'>{}</span>",
                 "weekdays": "<span color='#97783C'>{}</span>",
                 "today": "<span color='#A85049'><b>{}</b></span>"
             }

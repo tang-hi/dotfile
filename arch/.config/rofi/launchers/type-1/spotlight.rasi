@@ -1,6 +1,6 @@
 /**
  * Spotlight-style Launcher
- * Washi — ink on warm paper
+ * Washi — ink on silk-white paper
  **/
 
 /*****----- Configuration -----*****/
@@ -28,21 +28,21 @@ configuration {
     normal-background:           transparent;
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
-    urgent-foreground:           #FAF7EFFF;
+    urgent-foreground:           #FAFAF7FF;
     active-background:           var(active);
-    active-foreground:           #FAF7EFFF;
+    active-foreground:           #FAFAF7FF;
     selected-normal-background:  var(selected);
-    selected-normal-foreground:  #FAF7EFFF;
+    selected-normal-foreground:  #FAFAF7FF;
     selected-urgent-background:  var(urgent);
-    selected-urgent-foreground:  #FAF7EFFF;
+    selected-urgent-foreground:  #FAFAF7FF;
     selected-active-background:  var(active);
-    selected-active-foreground:  #FAF7EFFF;
+    selected-active-foreground:  #FAFAF7FF;
     alternate-normal-background: transparent;
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
-    alternate-urgent-foreground: #FAF7EFFF;
+    alternate-urgent-foreground: #FAFAF7FF;
     alternate-active-background: var(active);
-    alternate-active-foreground: #FAF7EFFF;
+    alternate-active-foreground: #FAFAF7FF;
 }
 
 /*****----- Main Window -----*****/

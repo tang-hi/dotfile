@@ -1,39 +1,39 @@
-# ━━━ Washi — ink on warm paper (btop) ━━━
+# ━━━ Washi — ink on silk-white paper (btop) ━━━
 
 # Main background and foreground
-theme[main_bg]="#F7F4EB"
-theme[main_fg]="#3E3A32"
+theme[main_bg]="#F6F6F2"
+theme[main_fg]="#3A3835"
 
 # Title color for boxes
-theme[title]="#3E3A32"
+theme[title]="#3A3835"
 
 # Highlight color for keyboard shortcuts
 theme[hi_fg]="#56708C"
 
 # Selected item in processes box
-theme[selected_bg]="#E7E0CD"
-theme[selected_fg]="#3E3A32"
+theme[selected_bg]="#E2E2DA"
+theme[selected_fg]="#3A3835"
 
 # Color of inactive/disabled text
-theme[inactive_fg]="#A29B89"
+theme[inactive_fg]="#A19D94"
 
 # Color of text appearing on top of graphs
-theme[graph_text]="#6E695C"
+theme[graph_text]="#6B6862"
 
 # Background color of the percentage meters
-theme[meter_bg]="#E9E4D6"
+theme[meter_bg]="#E6E6DF"
 
 # Misc colors for processes box
 theme[proc_misc]="#5E8A80"
 
 # Box outline colors
-theme[cpu_box]="#DBD3C1"
-theme[mem_box]="#DBD3C1"
-theme[net_box]="#DBD3C1"
-theme[proc_box]="#DBD3C1"
+theme[cpu_box]="#D6D5CC"
+theme[mem_box]="#D6D5CC"
+theme[net_box]="#D6D5CC"
+theme[proc_box]="#D6D5CC"
 
 # Box divider lines and small box borders
-theme[div_line]="#DBD3C1"
+theme[div_line]="#D6D5CC"
 
 # Temperature graph (matsuba → karashi → shu)
 theme[temp_start]="#66774F"

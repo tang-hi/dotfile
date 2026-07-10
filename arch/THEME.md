@@ -1,7 +1,7 @@
 # Washi — desktop design system
 
-A light, quiet, restrained desktop theme: the whole desktop is a sheet of warm
-paper, and the UI is ink and soft pigment on it. Every color comes from the
+A light, quiet, restrained desktop theme: the whole desktop is a sheet of
+silk-white paper, and the UI is ink and soft pigment on it. Every color comes from the
 traditional Japanese palette; the aesthetic is carried by color, spacing and
 type — all UI text stays in English.
 
@@ -25,19 +25,24 @@ type — all UI text stays in English.
 
 | Token      | Hex       | Traditional name | Role                                | Contrast |
 |------------|-----------|------------------|-------------------------------------|----------|
-| `paper`    | `#F5F1E6` | kinari           | base paper                          | —        |
-| `surface`  | `#FAF7EF` | shironeri        | cards / bar / overlays (85–96%)     | —        |
-| `surface2` | `#F1EBDD` | suna             | recessed / troughs / hover          | —        |
-| `hairline` | `#DBD3C1` | —                | 1px borders                         | —        |
-| `ink`      | `#3E3A32` | sumi             | primary text                        | 10.6:1   |
-| `ink2`     | `#6E695C` | nibi             | secondary text / icons              | 5.1:1    |
-| `ink3`     | `#A29B89` | usuzumi          | disabled / placeholder / inactive   | decor    |
-| `ai`       | `#56708C` | ainezu           | primary accent: selection / active  | 4.8:1    |
-| `matsuba`  | `#66774F` | matsuba          | success / terminal green            | 4.5:1    |
-| `karashi`  | `#97783C` | karashi          | warning / terminal yellow           | 3.9:1    |
-| `shu`      | `#A85049` | sabi-shu         | danger / critical / the one red     | 5.0:1    |
-| `seiji`    | `#5E8A80` | seiji            | decorative cyan / disk meter        | 3.6:1    |
-| `fuji`     | `#7D7397` | fujinezu         | decorative violet / RAM meter       | 4.1:1    |
+| `paper`    | `#F3F3EF` | shironeri        | base paper                          | —        |
+| `surface`  | `#FAFAF7` | gofun            | cards / bar / overlays (85–96%)     | —        |
+| `surface2` | `#ECECE6` | —                | recessed / troughs / hover          | —        |
+| `hairline` | `#D6D5CC` | kinunezu         | 1px borders                         | —        |
+| `ink`      | `#3A3835` | sumi             | primary text                        | 10.5:1   |
+| `ink2`     | `#6B6862` | nibi             | secondary text / icons              | 5.0:1    |
+| `ink3`     | `#A19D94` | usuzumi          | disabled / placeholder / inactive   | decor    |
+| `ai`       | `#56708C` | ainezu           | primary accent: selection / active  | 4.6:1    |
+| `matsuba`  | `#66774F` | matsuba          | success / terminal green            | 4.4:1    |
+| `karashi`  | `#97783C` | karashi          | warning / terminal yellow           | 3.7:1    |
+| `shu`      | `#A85049` | sabi-shu         | danger / critical / the one red     | 4.8:1    |
+| `seiji`    | `#5E8A80` | seiji            | decorative cyan / disk meter        | 3.5:1    |
+| `fuji`     | `#7D7397` | fujinezu         | decorative violet / RAM meter       | 4.0:1    |
+
+The neutrals were retuned in July 2026: the original kinari base (`#F5F1E6`)
+read too yellow on screen, so the paper family moved to the shironeri / gofun
+whites (yellow cast cut to roughly a quarter) while the inks kept a trace of
+sumi warmth. Accent pigments are unchanged.
 
 ## Type scale
 

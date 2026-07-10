@@ -8,7 +8,7 @@ font-size = 16
 # Cursor
 # ============================================
 cursor-color = #56708C
-cursor-text = #F7F4EB
+cursor-text = #F6F6F2
 cursor-style = bar
 cursor-style-blink = true
 
@@ -39,16 +39,16 @@ mouse-hide-while-typing = true
 shell-integration = detect
 
 # ============================================
-# Colors - Washi (ink on warm paper)
+# Colors - Washi (ink on silk-white paper)
 # ============================================
-foreground = #3E3A32
-background = #F7F4EB
-selection-foreground = #3E3A32
-selection-background = #E7E0CD
+foreground = #3A3835
+background = #F6F6F2
+selection-foreground = #3A3835
+selection-background = #E2E2DA
 
 # black (light surface, per light-theme convention)
-palette = 0=#E9E4D6
-palette = 8=#A29B89
+palette = 0=#E6E6DF
+palette = 8=#A19D94
 # red — shu (rust vermillion)
 palette = 1=#A85049
 palette = 9=#B25A52
@@ -68,8 +68,8 @@ palette = 13=#8D83A8
 palette = 6=#5E8A80
 palette = 14=#6E9A90
 # white (ink)
-palette = 7=#4A463E
-palette = 15=#3E3A32
+palette = 7=#474540
+palette = 15=#3A3835
 
 # ============================================
 # Keybindings

@@ -1,15 +1,15 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Washi — a quiet paper desktop
-   Ink on warm paper. Two floating islands, one floating title.
+   Ink on silk-white paper. Two floating islands, one floating title.
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-@define-color paper    #F5F1E6; /* kinari  — base paper        */
-@define-color surface  #FAF7EF; /* shironeri — raised surface  */
-@define-color surface2 #F1EBDD; /* suna — recessed / hover     */
-@define-color hairline #DBD3C1; /* border line                 */
-@define-color ink      #3E3A32; /* sumi — primary text         */
-@define-color ink2     #6E695C; /* nibi — secondary text       */
-@define-color ink3     #A29B89; /* usuzumi — faint / disabled  */
+@define-color paper    #F3F3EF; /* shironeri — base paper      */
+@define-color surface  #FAFAF7; /* gofun — raised surface      */
+@define-color surface2 #ECECE6; /* recessed / hover            */
+@define-color hairline #D6D5CC; /* kinunezu — border line      */
+@define-color ink      #3A3835; /* sumi — primary text         */
+@define-color ink2     #6B6862; /* nibi — secondary text       */
+@define-color ink3     #A19D94; /* usuzumi — faint / disabled  */
 @define-color ai       #56708C; /* ainezu — indigo accent      */
 @define-color matsuba  #66774F; /* pine green                  */
 @define-color karashi  #97783C; /* mustard                     */

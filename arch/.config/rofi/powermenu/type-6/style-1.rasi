@@ -107,7 +107,7 @@ element-text {
 
 element selected.normal {
     background-color:            @teal;
-    text-color:                  #FAF7EFFF;
+    text-color:                  #FAFAF7FF;
     border-radius:               12px;
 }
 
