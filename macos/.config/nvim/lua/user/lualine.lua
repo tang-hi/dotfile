@@ -17,7 +17,7 @@ function M.config()
     "diagnostics",
     sources = { "nvim_diagnostic" },
     sections = { "error", "warn" },
-    symbols = { error = " ", warn = " " },
+    symbols = { error = " ", warn = " " },
     colored = false,
     always_visible = true,
   }
@@ -25,7 +25,7 @@ function M.config()
   local diff = {
     "diff",
     colored = false,
-    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
     cond = hide_in_width,
   }
 
@@ -40,7 +40,7 @@ function M.config()
   }
 
   local spaces = function()
-    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return "spaces: " .. vim.bo.shiftwidth
   end
   lualine.setup {
     options = {

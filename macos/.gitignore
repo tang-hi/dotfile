@@ -1,1 +1,22 @@
+# macOS
 .DS_Store
+
+# Local secrets (API keys, tokens, etc.)
+.zshrc.local
+
+# Nvim generated files
+.config/nvim/lazy-lock.json
+.config/nvim/plugin/
+
+# Tmux (managed by tpm)
+.tmux/
+
+# Kitty themes (install separately)
+.config/kitty/kitty-themes/
+.config/kitty/*.bak
+
+# Yabai local settings
+.config/yabai/.claude/
+
+# Cache
+.cache/

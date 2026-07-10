@@ -72,7 +72,6 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 
-
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
@@ -94,11 +93,16 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
---Hop
-keymap("n", "f", ":HopChar1CurrentLineAC<CR>", opts)
-keymap("n", "F", ":HopChar1CurrentLineBC<CR>", opts)
-keymap("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
-keymap("n", "<leader><leader>b", ":HopWordBC<CR>", opts)
-keymap("n", "<leader><leader>j", ":HopVerticalAC<CR>", opts)
-keymap("n", "<leader><leader>k", ":HopVerticalBC<CR>", opts)
+-- Trouble
+keymap("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>Trouble loclist toggle<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", opts)
 
+-- Outline
+keymap("n", "<leader>o", "<cmd>Outline<cr>", opts)
+
+-- Todo Comments
+keymap("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", opts)
+keymap("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
+keymap("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })

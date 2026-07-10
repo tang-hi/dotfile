@@ -1,22 +1,29 @@
--- local M = {
---   "folke/tokyonight.nvim",
---   commit = "e52c41314e83232840d6970e6b072f9fba242eb9",
---   lazy = false,    -- make sure we load this during startup if it is your main colorscheme
---   priority = 1000, -- make sure to load this before all the other start plugins
--- }
---
 local M = {
-    "catppuccin/nvim",
-    lazy = false,
-    priority = 1000,
+  "rose-pine/neovim",
+  name = "rose-pine",
+  lazy = false,
+  priority = 1000,
 }
 
-M.name = "catppuccin-latte"
 function M.config()
-  local status_ok, _ = pcall(vim.cmd.colorscheme, M.name)
-  if not status_ok then
-    return
-  end
+  require("rose-pine").setup {
+    variant = "dawn",
+    dark_variant = "moon",
+    styles = {
+      bold = true,
+      italic = false,
+      transparency = true,
+    },
+    highlight_groups = {
+      TelescopeBorder = { fg = "highlight_high", bg = "none" },
+      TelescopeNormal = { bg = "none" },
+      TelescopePromptNormal = { bg = "base" },
+      TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+      TelescopeSelection = { fg = "text", bg = "base" },
+      TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+    },
+  }
+  vim.cmd.colorscheme "rose-pine-dawn"
 end
 
 return M

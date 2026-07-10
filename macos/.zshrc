@@ -1,9 +1,12 @@
-# If you come from bash you might have to change your $PATH.
+# Path to your oh-my-zsh installation.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME=""  # using starship prompt instead
+
+DISABLE_AUTO_TITLE="true"
 
 #plugins
 COMPLETION_WAITING_DOTS="true"
@@ -21,26 +24,35 @@ fuck() {
   fuck "$@"
 }
 
-# aliases
-alias python=python3
-alias vim=nvim
-alias cat=bat
-alias ls="eza --icons"
-alias ll="eza -la --icons --git"
-alias tree="eza --tree --icons"
-alias lg=lazygit
-
+# macOS toolchain
 export PATH=/opt/homebrew/opt/llvm/bin:$PATH
 export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 export CPATH=$CPATH:/opt/homebrew/opt/llvm/include
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/homebrew/opt/llvm/lib
 
-
 #export HTTP_PROXY="http://127.0.0.1:7897"
 #export HTTPS_PROXY="http://127.0.0.1:7897"
 
-# tool init (keep at end)
-eval "$(zoxide init zsh)"
+# Modern CLI tool aliases
+alias python=python3
+alias vim=nvim
+alias ls="eza --icons"
+alias ll="eza -la --icons --git"
+alias lt="eza --tree --icons --level=2"
+alias cat="bat --paging=never"
+alias find="fd"
+alias diff="delta"
+alias lg=lazygit
+
+# fzf
 source <(fzf --zsh)
+
+# Starship prompt
 eval "$(starship init zsh)"
+
+# Zoxide (replaces z plugin)
+eval "$(zoxide init zsh)"
+
+# User-specific environment variables (create ~/.zshrc.local for secrets)
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

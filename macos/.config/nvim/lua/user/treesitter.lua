@@ -18,7 +18,7 @@ function M.config()
   require('ts_context_commentstring').setup {}
 
   configs.setup {
-    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "cpp", "c", "go", "java", "html",  "javascript", "typescript"}, -- put the language you want in this array
+    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "cpp", "c", "rust", "toml", "go", "java", "html", "javascript", "typescript" },
     -- ensure_installed = "all", -- one of "all" or a list of languages
     ignore_install = { "" },                                                       -- List of parsers to ignore installing
     sync_install = true,                                                          -- install languages synchronously (only applied to `ensure_installed`)

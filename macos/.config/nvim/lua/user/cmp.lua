@@ -47,30 +47,30 @@ function M.config()
     Text = "󰉿",
     Method = "m",
     Function = "󰊕",
-    Constructor = "",
-    Field = "",
+    Constructor = "",
+    Field = "",
     Variable = "󰆧",
     Class = "󰌗",
-    Interface = "",
-    Module = "",
-    Property = "",
-    Unit = "",
+    Interface = "",
+    Module = "",
+    Property = "",
+    Unit = "",
     Value = "󰎠",
-    Enum = "",
+    Enum = "",
     Keyword = "󰌋",
-    Snippet = "",
+    Snippet = "",
     Color = "󰏘",
     File = "󰈙",
-    Reference = "",
+    Reference = "",
     Folder = "󰉋",
-    EnumMember = "",
+    EnumMember = "",
     Constant = "󰇽",
-    Struct = "",
-    Event = "",
+    Struct = "",
+    Event = "",
     Operator = "󰆕",
     TypeParameter = "󰊄",
     Codeium = "󰚩",
-    Copilot = "",
+    Copilot = "",
   }
 
   cmp.setup {
@@ -93,7 +93,10 @@ function M.config()
       -- Set `select` to `false` to only confirm explicitly selected items.
       ["<CR>"] = cmp.mapping.confirm { select = true },
       ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
+        local copilot = require("copilot.suggestion")
+        if copilot.is_visible() then
+          copilot.accept()
+        elseif cmp.visible() then
           cmp.select_next_item()
         elseif luasnip.expandable() then
           luasnip.expand()
@@ -152,9 +155,16 @@ function M.config()
       documentation = cmp.config.window.bordered(),
     },
     experimental = {
-      ghost_text = true,
+      ghost_text = false,
     },
   }
+
+  cmp.event:on("menu_opened", function()
+    vim.b.copilot_suggestion_hidden = true
+  end)
+  cmp.event:on("menu_closed", function()
+    vim.b.copilot_suggestion_hidden = false
+  end)
 end
 
 return M

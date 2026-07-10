@@ -1,0 +1,126 @@
+# ============================================
+# Font Configuration
+# ============================================
+font-family = Maple Mono NF CN
+font-size = 16
+font-feature = +liga,+calt
+adjust-cell-height = 10%
+
+# ============================================
+# Cursor
+# ============================================
+cursor-color = #56949f
+cursor-text = #faf4ed
+cursor-style = bar
+cursor-style-blink = true
+
+# ============================================
+# Scrollback
+# ============================================
+scrollback-limit = 10000
+
+# ============================================
+# Window
+# ============================================
+window-padding-x = 25
+window-padding-y = 25
+background-opacity = 0.88
+background-blur-radius = 20
+window-decoration = true
+macos-titlebar-style = hidden
+confirm-close-surface = false
+quit-after-last-window-closed = true
+window-colorspace = display-p3
+macos-icon = blueprint
+
+# ============================================
+# Mouse & Selection
+# ============================================
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+
+# ============================================
+# macOS Specific
+# ============================================
+macos-option-as-alt = true
+
+# ============================================
+# Shell Integration
+# ============================================
+shell-integration = detect
+
+# ============================================
+# Colors - Rose Pine Dawn
+# ============================================
+foreground = #575279
+background = #faf4ed
+selection-foreground = #575279
+selection-background = #dfdad9
+
+# black
+palette = 0=#f2e9e1
+palette = 8=#9893a5
+# red
+palette = 1=#b4637a
+palette = 9=#b4637a
+# green
+palette = 2=#286983
+palette = 10=#286983
+# yellow
+palette = 3=#ea9d34
+palette = 11=#ea9d34
+# blue
+palette = 4=#56949f
+palette = 12=#56949f
+# magenta
+palette = 5=#907aa9
+palette = 13=#907aa9
+# cyan
+palette = 6=#d7827e
+palette = 14=#d7827e
+# white
+palette = 7=#575279
+palette = 15=#575279
+
+# ============================================
+# Keybindings
+# ============================================
+
+# Special keys
+keybind = shift+enter=text:\x1b\x0d
+
+# Clipboard
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+
+# Tab management
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_surface
+keybind = ctrl+shift+left=previous_tab
+keybind = ctrl+shift+right=next_tab
+keybind = ctrl+shift+one=goto_tab:1
+keybind = ctrl+shift+two=goto_tab:2
+keybind = ctrl+shift+three=goto_tab:3
+keybind = ctrl+shift+four=goto_tab:4
+keybind = ctrl+shift+five=goto_tab:5
+
+# Window management
+keybind = ctrl+shift+enter=new_split:auto
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+shift+q=close_surface
+
+# Scrolling
+keybind = ctrl+shift+up=scroll_page_lines:-1
+keybind = ctrl+shift+down=scroll_page_lines:1
+keybind = ctrl+shift+page_up=scroll_page_up
+keybind = ctrl+shift+page_down=scroll_page_down
+keybind = ctrl+shift+home=scroll_to_top
+keybind = ctrl+shift+end=scroll_to_bottom
+
+# Font size
+keybind = ctrl+shift+equal=increase_font_size:2
+keybind = ctrl+minus=decrease_font_size:2
+keybind = ctrl+zero=reset_font_size
+
+# Misc
+keybind = ctrl+shift+f5=reload_config
